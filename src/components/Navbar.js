@@ -5,7 +5,8 @@ const styles = {
     textDecoration: 'none',
     color: 'black',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    height: '10vh'
 }
 
 
@@ -19,7 +20,7 @@ class Navbar extends Component {
                 <div><Link to='/apps' style={styles}><img src='images/works.png' />Apps</Link></div>
                 <div><Link to='/youtube' style={styles}><img src='images/design.png' />MyYoutube</Link></div>
                 <div><Link to='/resume' style={styles}><img src='images/resume.png' />Résumé</Link></div>
-            </Container>)
+            </Container >)
     }
 }
 
@@ -41,7 +42,7 @@ const Container = styled.div`
           color:rgb(3, 3, 3);
           z-index: 999 ;
   div{
-                        display: flex;
+                    display: flex;
                     flex-direction: row;
                     justify-content: center;
                     align-items: center;
@@ -49,11 +50,11 @@ const Container = styled.div`
                     color: black;
                     cursor: pointer;
     &:hover{
-                        border - bottom: 5px solid darkgray;
+                    border-bottom: 5px solid darkgray;
                     background: rgba(0, 0,0, 0.045)
                     };
     img{
-                        opacity: 1;
+                    opacity: 1;
                     height:3.0vh;
                     z-index: 0 ;
                     text-align: center;
