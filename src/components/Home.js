@@ -6,7 +6,7 @@ export default class Home extends Component {
     render() {
         return (
             <Container>
-                Hello from Home!
+                <h1>Welcome to Olee's Portfolio Site!</h1>
             </Container>
         )
     }
