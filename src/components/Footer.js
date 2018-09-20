@@ -11,37 +11,36 @@ const styles = {
 }
 
 
-class Navbar extends Component {
+class Footer extends Component {
     render() {
         return (
-
             <Container>
-                <div><Link style={styles} to='/'><img src='images/home.svg' />Home</Link></div>
-                <div><Link style={styles} to='/about'><img src='images/user.png' />About</Link></div>
-                <div><Link style={styles} to='/apps'><img src='images/works.png' />Apps</Link></div>
-                <div><Link style={styles} to='/youtube'><img src='images/design.png' />MyYoutube</Link></div>
-                <div><Link style={styles} to='/resume'><img src='images/resume.png' />Résumé</Link></div>
+                <div><a style={styles} href='https://github.com/olee2002'><img src='images/github.png' /></a></div>
+                |
+                <div><a style={styles} href='https://www.linkedin.com/in/ok-hyun-lee-8467877'><img src='images/linked.png' /></a></div>
+                |
+                <div><a style={styles} href="mailto:babylee2002@gmail.com" target="" title="Email"><img src='images/mail.png' /></a></div>
             </Container >)
     }
 }
 
-export default Navbar;
+export default Footer;
 
 
 const Container = styled.div`
           width: 100vw;
-          height: 10vh;
-          display: flex;
-          justify-content: center;
-          position: fixed;
-        
-          top: 0;
-          left: auto;
-          font-size: 1.85vh;
-          font-weight: 900;
-          background: rgba(232, 231, 231,0.45);
-          color:rgb(3, 3, 3);
-          z-index: 999 ;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: auto; 
+  font-size: 2vh;
+  font-weight: 900;
+  background: rgba(232, 231, 231,0.5);
+  color:rgb(3, 3, 3);
+  z-index: 999 ;
   div{
                     display: flex;
                     flex-direction: row;
@@ -51,7 +50,7 @@ const Container = styled.div`
                     color: black;
                     cursor: pointer;
     &:hover{
-                    border-bottom: 5px solid darkgray;
+                    border-top: 5px solid darkgray;
                     background: rgba(0, 0,0, 0.045)
                     };
     img{

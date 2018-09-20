@@ -1,22 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
-export default class MyYoutube extends Component {
+
+export default class Youtube extends Component {
     render() {
         return (
             <Container>
-                This is MyYoutube!
+                Hello from Youtube!
             </Container>
         )
     }
 }
 
-
 const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 10vh;
+width: 100vw;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
 `;
