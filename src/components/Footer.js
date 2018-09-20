@@ -11,18 +11,15 @@ const styles = {
 }
 
 
-class Footer extends Component {
-    render() {
-        return (
-            <Container>
-                <div><a style={styles} href='https://github.com/olee2002'><img src='images/github.png' /></a></div>
-                |
+const Footer = () =>
+    <Container>
+        <div><a style={styles} href='https://github.com/olee2002'><img src='images/github.png' /></a></div>
+        |
                 <div><a style={styles} href='https://www.linkedin.com/in/ok-hyun-lee-8467877'><img src='images/linked.png' /></a></div>
-                |
+        |
                 <div><a style={styles} href="mailto:babylee2002@gmail.com" target="" title="Email"><img src='images/mail.png' /></a></div>
-            </Container >)
-    }
-}
+    </Container >
+
 
 export default Footer;
 
