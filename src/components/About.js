@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
-
+import ReactTooltip from 'react-tooltip';
 export default class About extends Component {
+
     render() {
         return (
             <Container>
-                <img src='images/olee.jpg'></img>
+                <img src='images/olee.jpg' data-type="info" data-tip="yo whats up?"></img>
+                <ReactTooltip />
                 <div><h3>Olee is a full-stack software developer with a strong design background. In her previous career as an architect, the process of designing skyscrapers trained her to break down complex problems into their constituent parts. No one could build the projects alone, it was always the result of collaborative effort. Due to that, she grew to be an excellent team player.</h3></div>
             </Container>
         )
@@ -29,5 +30,6 @@ img{
 div{
     width: 55vw;
     text-align: left;
+    z-index: 999 ;
     }
 `;

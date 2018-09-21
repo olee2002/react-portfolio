@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Random } from 'react-animated-text';
 
-
 export default class Home extends Component {
 
 
