@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Random } from 'react-animated-text';
 
 
 export default class Home extends Component {
     render() {
         return (
             <Container>
-                <div className='welcome'>Welcome to Olee's Portfolio Site!</div>
+                <div>
+                    <Random
+                        text="Welcome to Olee's Portfolio Site!"
+                        effect="verticalFadeOut"
+                        effectDirection="down"
+                        effectDuration={1.5}
+                        effectDelay={2}
+                        iterations={1}
+                        effectChange={10}
+                    />
+                </div>
             </Container>
         )
     }
@@ -19,4 +30,9 @@ display: flex;
 justify-content: center;
 align-items: center;
 z-index: 999 ;
+div{
+    margin-top: -100px; 
+    font-size: 35px;
+    font-weight: 800;
+}
 `;
