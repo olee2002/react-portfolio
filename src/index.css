@@ -37,3 +37,10 @@ body {
   position: fixed;
   z-index: 999;
 }
+
+.tooltip{
+  width: 180px !important;
+  height: 150px !important;
+  padding: 15px !important;
+  text-align: left !important;
+}

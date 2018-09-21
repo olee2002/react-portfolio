@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'
 
 const styles = {
     textDecoration: 'none',
@@ -10,14 +9,13 @@ const styles = {
     height: '10vh'
 }
 
-
 const Footer = () =>
     <Container>
         <div><a style={styles} href='https://github.com/olee2002'><img src='images/github.png' /></a></div>
         |
-                <div><a style={styles} href='https://www.linkedin.com/in/ok-hyun-lee-8467877'><img src='images/linked.png' /></a></div>
+        <div><a style={styles} href='https://www.linkedin.com/in/ok-hyun-lee-8467877'><img src='images/linked.png' /></a></div>
         |
-                <div><a style={styles} href="mailto:babylee2002@gmail.com" target="" title="Email"><img src='images/mail.png' /></a></div>
+        <div><a style={styles} href="mailto:babylee2002@gmail.com" target="" title="Email"><img src='images/mail.png' /></a></div>
     </Container >
 
 
@@ -35,7 +33,7 @@ const Container = styled.div`
   left: auto; 
   font-size: 2vh;
   font-weight: 900;
-  background: rgba(232, 231, 231,0.5);
+  background: rgba(232, 231, 231,0.75);
   color:rgb(3, 3, 3);
   z-index: 999 ;
   div{
