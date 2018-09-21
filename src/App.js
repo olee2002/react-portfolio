@@ -8,6 +8,7 @@ import About from './components/About';
 import Apps from './components/Apps';
 import Youtube from './components/Youtube';
 import Footer from './components/Footer';
+import Particles from './components/Particles';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
+            <Particles />
             <Navbar />
             <Switch>
               <Route exact path='/' component={Home} />

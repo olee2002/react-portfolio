@@ -20,7 +20,7 @@ class Navbar extends Component {
                 <div><Link style={styles} to='/apps'><img src='images/works.png' />Apps</Link></div>
                 <div><Link style={styles} to='/youtube'><img src='images/design.png' />Youtube</Link></div>
                 <div><Link style={styles} to='/about'><img src='images/user.png' />About</Link></div>
-                <div><a style={styles} href='https://github.com/olee2002/Portfolio/blob/master/images/olee-resume.pdf'><img src='images/resume.png' />Résumé</a></div>
+                <div><a style={styles} href='https://github.com/olee2002/Portfolio/blob/master/images/olee-resume.pdf' target=''><img src='images/resume.png' />Résumé</a></div>
             </Container >)
     }
 }

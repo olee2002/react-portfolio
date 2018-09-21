@@ -32,7 +32,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
+  z-index: 999 ; 
 div{
   width: 60vw;
   height: 60vh;
@@ -41,7 +42,6 @@ div{
   flex-wrap: wrap;
   /* justify-content: center; */
   align-items: center; 
-  z-index: 0 ;
 }
 img{
     z-index: 0 ;
