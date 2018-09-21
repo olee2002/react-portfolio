@@ -4,6 +4,8 @@ import { Random } from 'react-animated-text';
 
 
 export default class Home extends Component {
+
+
     render() {
         return (
             <Container>
@@ -12,7 +14,7 @@ export default class Home extends Component {
                         text="Welcome to Olee's Portfolio Site!"
                         effect="verticalFadeOut"
                         effectDirection="down"
-                        effectDuration={1.5}
+                        effectDuration={4}
                         effectDelay={2}
                         iterations={1}
                         effectChange={10}
