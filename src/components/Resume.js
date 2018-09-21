@@ -6,7 +6,7 @@ export default class Resume extends Component {
     render() {
         return (
             <Container>
-                Hello from Resume!
+                <a href='https://github.com/olee2002/Portfolio/blob/master/images/olee-resume.pdf'>Click here to view my resume!</a>
             </Container>
         )
     }

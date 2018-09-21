@@ -19,7 +19,7 @@ export default class Apps extends Component {
 }
 
 const Container = styled.a`
- width: 100vw;
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: row;
