@@ -21,8 +21,9 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 img{
-    width: 30vw;
+    width: 25vw;
     border-radius: 10px;
+    margin-bottom: 30px;
 }
 div{
     width: 55vw;
