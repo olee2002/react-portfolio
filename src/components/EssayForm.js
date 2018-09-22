@@ -8,10 +8,10 @@ export default class EssayForm extends Component {
         return (
             <Container>
                 <form onSubmit={this.handleSubmit}>
-                    <h3>Please Submit Your Comment!</h3>
+                    <h4>Please Submit Your Comment!</h4>
                     <textarea
-                        value={this.state.value}
-                        onChange={this.handleChange}
+                    // value={this.state.value}
+                    // onChange={this.handleChange}
                     />
                     <button type="submit">Submit</button>
                 </form>
@@ -31,10 +31,10 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 textarea{
-    margin-top: 5px;
+    margin-top: 0px;
     margin-bottom: 5px;
     width: 30vw;
-    height: 18vh;
+    height: 16vh;
     border-radius: 5px;
     font-size: 14px;
     border: 1px solid lightgray;
