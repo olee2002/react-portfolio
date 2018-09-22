@@ -29,7 +29,11 @@ export default class LogInForm extends Component {
         }
 
         console.log(payload)
-        const res = axios.post('/api/test', payload)
+        const res = axios.create({
+            proxy: {
+                host: `${process.env.REACT_APP_API_HOST_URL}`
+            }
+        }).post('/api/test', payload)
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
     }
