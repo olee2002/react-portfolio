@@ -12,12 +12,7 @@ export default class About extends Component {
 
 
     componentDidMount = () => {
-        console.log('olee', process.env, process.env.REACT_APP_API_HOST_URL)
-        axios.create({
-            proxy: {
-                host: process.env.REACT_APP_API_HOST_URL
-            }
-        }).get('/api/test')
+        axios.get('/api/test')
             .then((res) => {
                 console.log(res.data)
                 this.setState({ user: res.data })
