@@ -12,7 +12,7 @@ export default class About extends Component {
 
 
     componentDidMount = () => {
-        axios.get('/api/test')
+        axios.get('https://olee-portfolio-api.herokuapp.com/api/test')
             .then((res) => {
                 console.log(res.data)
                 this.setState({ user: res.data })

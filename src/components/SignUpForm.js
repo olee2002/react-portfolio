@@ -31,7 +31,7 @@ export default class LogInForm extends Component {
             userId: this.state.userId,
             password: this.state.password
         }
-        const res = axios.post('/api/test', payload)
+        const res = axios.post('https://olee-portfolio-api.herokuapp.com/api/test', payload)
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
     }

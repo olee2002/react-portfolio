@@ -34,7 +34,7 @@ textarea{
     margin-top: 0px;
     margin-bottom: 5px;
     width: 30vw;
-    height: 16vh;
+    height: 18vh;
     border-radius: 5px;
     font-size: 14px;
     border: 1px solid lightgray;
