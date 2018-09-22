@@ -12,7 +12,8 @@ export default class About extends Component {
 
 
     componentDidMount = () => {
-        axios.get('https://olee-portfolio-api.herokuapp.com/api/test')
+        const API_HOST_URL = process.env.REACT_APP_API_HOST_URL
+        axios.get(`${API_HOST_URL}/api/test`)
             .then((res) => {
                 console.log(res.data)
                 this.setState({ user: res.data })
