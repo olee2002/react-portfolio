@@ -9,12 +9,12 @@ export default class About extends Component {
     }
 
     componentDidMount = () => {
-        axios.get('/api/test')
-            .then((res) => {
-                console.log(res.data)
-                this.setState({ user: res.data })
-                console.log(this.state.user)
-            })
+        // axios.get('/api/test')
+        //     .then((res) => {
+        //         console.log(res.data)
+        //         this.setState({ user: res.data })
+        //         console.log(this.state.user)
+        //     })
     }
 
     render() {
