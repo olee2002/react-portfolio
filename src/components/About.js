@@ -3,6 +3,20 @@ import styled from 'styled-components';
 import ReactTooltip from 'react-tooltip';
 export default class About extends Component {
 
+    state = {
+        user: {}
+    }
+
+    componentDidMount = () => {
+        fetch('/api/test')
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data)
+                this.setState({ user: data })
+                console.log(this.state.user)
+            })
+    }
+
     render() {
         return (
             <Container>

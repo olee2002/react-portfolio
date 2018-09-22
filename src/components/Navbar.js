@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
+import SignUpForm from './SignUpForm';
 
 const styles = {
     textDecoration: 'none',
@@ -12,15 +14,19 @@ const styles = {
 
 
 class Navbar extends Component {
+
     render() {
         return (
 
             <Container>
-                <div><Link style={styles} to='/'><img src='images/home.svg' />Home</Link></div>
-                <div><Link style={styles} to='/apps'><img src='images/works.png' />Apps</Link></div>
-                <div><Link style={styles} to='/youtube'><img src='images/design.png' />Youtube</Link></div>
-                <div><Link style={styles} to='/about'><img src='images/user.png' />About</Link></div>
-                <div><a style={styles} href='https://github.com/olee2002/Portfolio/blob/master/images/olee-resume.pdf' target=''><img src='images/resume.png' />Résumé</a></div>
+                <div>
+                    <NavLink><Link style={styles} to='/'><img src='images/home.svg' />Home</Link></NavLink>
+                    <NavLink><Link style={styles} to='/apps'><img src='images/works.png' />Apps</Link></NavLink>
+                    <NavLink><Link style={styles} to='/youtube'><img src='images/design.png' />Youtube</Link></NavLink>
+                    <NavLink><Link style={styles} to='/about'><img src='images/user.png' />About</Link></NavLink>
+                    <NavLink><a style={styles} href='https://github.com/olee2002/Portfolio/blob/master/images/olee-resume.pdf' target=''><img src='images/resume.png' />Résumé</a></NavLink>
+                    <SignUpForm />
+                </div>
             </Container >)
     }
 }
@@ -34,7 +40,6 @@ const Container = styled.div`
           display: flex;
           justify-content: center;
           position: fixed;
-        
           top: 0;
           left: auto;
           font-size: 1.85vh;
@@ -42,24 +47,31 @@ const Container = styled.div`
           background: rgba(232, 231, 231,0.45);
           color:rgb(3, 3, 3);
           z-index: 999 ;
-  div{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
-                    width:15vh;
-                    color: black;
-                    cursor: pointer;
-    &:hover{
-                    border-bottom: 5px solid darkgray;
-                    background: rgba(0, 0,0, 0.045)
-                    };
-    img{
-                    opacity: 1;
-                    height:3.0vh;
-                    z-index: 0 ;
-                    text-align: center;
-                    margin: 3px;
-                    };
-                  }
+          div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+          }
                 `;
+
+const NavLink = styled.div`
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width:30vh;
+        color: black;
+        cursor: pointer;
+&:hover{
+        border-bottom: 5px solid darkgray;
+        background: rgba(0, 0,0, 0.045)
+        };
+img{
+        opacity: 1;
+        height:3.0vh;
+        z-index: 0 ;
+        text-align: center;
+        margin: 3px;
+        };
+    `;
