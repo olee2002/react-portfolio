@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ReactTooltip from 'react-tooltip';
+import axios from 'axios';
 export default class About extends Component {
 
     state = {
@@ -8,11 +9,10 @@ export default class About extends Component {
     }
 
     componentDidMount = () => {
-        fetch('/api/test')
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data)
-                this.setState({ user: data })
+        axios.get('/api/test')
+            .then((res) => {
+                console.log(res.data)
+                this.setState({ user: res.data })
                 console.log(this.state.user)
             })
     }

@@ -1,46 +1,112 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
-export default class SignUpForm extends Component {
+export default class LogInForm extends Component {
+
+    state = {
+        firstName: '',
+        lastName: '',
+        userId: '',
+        password: ''
+    }
+
+    handleChange = name => (e) => {
+        console.log(e.target.value)
+        this.setState({
+            [name]: e.target.value
+        })
+    }
+
+    componentDidMount() {
+        this.handleSubmit
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const payload = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            userId: this.state.userId,
+            password: this.state.password
+        }
+
+        console.log(payload)
+        const res = axios.post('/api/test', payload)
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
+    }
+
+
     render() {
         return (
             <Container>
+                <h3>Please Sign Up!</h3>
                 <form>
-                    <label>
-                        ID
-            </label>
-                    <input>
-                    </input>
-                    <label>
-                        Password
-            </label>
-                    <input>
-                    </input>
-                    <button>Submit</button>
-                    <button>Register</button>
+                    <div>
+                        <label>Firstname</label>
+                        <input type='text' onChange={this.handleChange('firstName')} />
+                    </div>
+                    <div>
+                        <label>Lastname</label>
+                        <input type='text' onChange={this.handleChange('lastName')} />
+                    </div>
+                    <div>
+                        <label>ID</label>
+                        <input type='text' onChange={this.handleChange('userId')} />
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <input type='text' onChange={this.handleChange('password')} />
+                    </div>
+                    <div>
+                        <button onClick={this.handleSubmit}>Submit</button>
+                    </div>
                 </form>
+
             </Container>
         )
     }
 }
 
 const Container = styled.div`
-margin-left: 50px;
-width: 100%;
-height: 100%;
+width: 100vw;
+height: 100vh;
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
+z-index: 999 ;
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    z-index: 999 ;
+}
 label{
     margin-left: 10px;
     margin-right: 10px;
+    font-size: 14px;
 };
+input{
+    height: 25px;
+    width: 300px;
+    margin: 3px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    z-index: 999;
+    font-size: 14px;
+}
 button{
-    height: 20px;
-    width: 70px;
+    height: 30px;
+    width: 100px;
     border: none;
-    margin-left: 5px;
+    margin-top: 10px;
+    margin-right: 5px;
     cursor: pointer;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
     box-shadow:1.5px 1.5px 0px rgba(0,0,0,0.15);
 }
 `;

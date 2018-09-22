@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import SignUpForm from './SignUpForm';
+import LogInForm from './LogInForm';
 
 const styles = {
     textDecoration: 'none',
@@ -25,7 +25,7 @@ class Navbar extends Component {
                     <NavLink><Link style={styles} to='/youtube'><img src='images/design.png' />Youtube</Link></NavLink>
                     <NavLink><Link style={styles} to='/about'><img src='images/user.png' />About</Link></NavLink>
                     <NavLink><a style={styles} href='https://github.com/olee2002/Portfolio/blob/master/images/olee-resume.pdf' target=''><img src='images/resume.png' />Résumé</a></NavLink>
-                    <SignUpForm />
+                    <LogInForm />
                 </div>
             </Container >)
     }
@@ -37,8 +37,6 @@ export default Navbar;
 const Container = styled.div`
           width: 100vw;
           height: 10vh;
-          display: flex;
-          justify-content: center;
           position: fixed;
           top: 0;
           left: auto;
@@ -47,6 +45,7 @@ const Container = styled.div`
           background: rgba(232, 231, 231,0.45);
           color:rgb(3, 3, 3);
           z-index: 999 ;
+          display: flex;
           div{
         display: flex;
         flex-direction: row;
