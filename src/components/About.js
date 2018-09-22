@@ -13,7 +13,7 @@ export default class About extends Component {
         console.log('olee', process.env.REACT_APP_API_HOST_URL)
         axios.create({
             proxy: {
-                host: process.env.REACT_APP_API_HOST_URL
+                host: `${process.env.REACT_APP_API_HOST_URL}`
             }
         }).get('/api/test')
             .then((res) => {
