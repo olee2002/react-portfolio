@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import ReactTooltip from 'react-tooltip';
 import axios from 'axios';
+
+
 export default class About extends Component {
 
     state = {
@@ -13,7 +15,7 @@ export default class About extends Component {
         console.log('olee', process.env, process.env.REACT_APP_API_HOST_URL)
         axios.create({
             proxy: {
-                host: `'${process.env.REACT_APP_API_HOST_URL}'`
+                host: process.env.REACT_APP_API_HOST_URL
             }
         }).get('/api/test')
             .then((res) => {
@@ -47,6 +49,9 @@ img{
     width: 25vw;
     border-radius: 10px;
     margin-bottom: 30px;
+}
+form{
+    z-index: 999 ; 
 }
 div{
     width: 55vw;

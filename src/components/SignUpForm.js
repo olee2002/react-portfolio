@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
+import EssayForm from './EssayForm';
+
 export default class LogInForm extends Component {
 
     state = {
@@ -11,18 +13,17 @@ export default class LogInForm extends Component {
         password: ''
     }
 
-    handleChange = name => (e) => {
-        console.log(e.target.value)
-        this.setState({
-            [name]: e.target.value
-        })
-    }
-
-    componentDidMount() {
-        this.handleSubmit
+    handleChange = name => {
+        return (e) => {
+            console.log(e.target.value)
+            this.setState({
+                [name]: e.target.value
+            })
+        }
     }
 
     handleSubmit = (e) => {
+
         e.preventDefault();
         const payload = {
             firstName: this.state.firstName,
@@ -43,28 +44,32 @@ export default class LogInForm extends Component {
     render() {
         return (
             <Container>
-                <h3>Please Sign Up!</h3>
-                <form>
-                    <div>
-                        <label>Firstname</label>
-                        <input type='text' onChange={this.handleChange('firstName')} />
-                    </div>
-                    <div>
-                        <label>Lastname</label>
-                        <input type='text' onChange={this.handleChange('lastName')} />
-                    </div>
-                    <div>
-                        <label>ID</label>
-                        <input type='text' onChange={this.handleChange('userId')} />
-                    </div>
-                    <div>
-                        <label>Password</label>
-                        <input type='text' onChange={this.handleChange('password')} />
-                    </div>
-                    <div>
-                        <button onClick={this.handleSubmit}>Submit</button>
-                    </div>
-                </form>
+                <SubContainer>
+
+                    <form>
+                        <h3>Please Sign Up!</h3>
+                        <div>
+                            <label>Firstname</label>
+                            <input type='text' onChange={this.handleChange('firstName')} />
+                        </div>
+                        <div>
+                            <label>Lastname</label>
+                            <input type='text' onChange={this.handleChange('lastName')} />
+                        </div>
+                        <div>
+                            <label>ID</label>
+                            <input type='text' onChange={this.handleChange('userId')} />
+                        </div>
+                        <div>
+                            <label>Password</label>
+                            <input type='text' onChange={this.handleChange('password')} />
+                        </div>
+                        <div>
+                            <button onClick={this.handleSubmit}>Submit</button>
+                        </div>
+                    </form>
+                </SubContainer>
+                <EssayForm />
 
             </Container>
         )
@@ -75,7 +80,6 @@ const Container = styled.div`
 width: 100vw;
 height: 100vh;
 display: flex;
-flex-direction: column;
 justify-content: center;
 align-items: center;
 z-index: 999 ;
@@ -85,6 +89,7 @@ form{
     justify-content: flex-start;
     align-items: flex-end;
     z-index: 999 ;
+    margin-right: 50px;
 }
 label{
     margin-left: 10px;
@@ -111,4 +116,10 @@ button{
     font-family: 'Montserrat', sans-serif;
     box-shadow:1.5px 1.5px 0px rgba(0,0,0,0.15);
 }
+`;
+
+const SubContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 `;
