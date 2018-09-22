@@ -21,6 +21,7 @@ export default class About extends Component {
                 this.setState({ user: res.data })
                 console.log(this.state.user)
             })
+            .catch((err) => console.log(err))
     }
 
     render() {
