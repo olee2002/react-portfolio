@@ -31,8 +31,10 @@ export default class LogInForm extends Component {
             password: this.state.password
         }
 
-        console.log(payload)
-        const res = axios.post('/api/test', payload)
+        console.log(process.env.API_HOST_URL)
+        const res = axios.create({
+            baseURL: process.env.API_HOST_URL
+        }).post('/api/test', payload)
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
     }
