@@ -8,23 +8,19 @@ export default class About extends Component {
         user: {}
     }
 
+
     componentDidMount = () => {
 
         axios.create({
-            baseURL: process.env.API_HOST_URL
+            proxy: {
+                host: process.env.REACT_APP_API_HOST_URL
+            }
         }).get('/api/test')
             .then((res) => {
                 console.log(res.data)
                 this.setState({ user: res.data })
                 console.log(this.state.user)
             })
-
-
-        axios.create({
-            baseURL: this.getHostName(),
-            timeout: process.env.REACT_APP_BOARDACTIVE_API_TIMEOUT_INTERVAL || 10000,
-            headers: this.getHeader(),
-        });
     }
 
     render() {

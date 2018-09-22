@@ -30,10 +30,10 @@ export default class LogInForm extends Component {
             userId: this.state.userId,
             password: this.state.password
         }
-
-        console.log(process.env.API_HOST_URL)
         const res = axios.create({
-            baseURL: process.env.API_HOST_URL
+            proxy: {
+                host: process.env.REACT_APP_API_HOST_URL
+            }
         }).post('/api/test', payload)
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
