@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
-import EssayForm from './EssayForm';
+import CommentForm from './CommentForm';
 
 export default class LogInForm extends Component {
 
@@ -66,7 +66,7 @@ export default class LogInForm extends Component {
                         </div>
                     </form>
                 </SubContainer>
-                <EssayForm />
+                <CommentForm />
 
             </Container>
         )

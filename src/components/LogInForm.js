@@ -7,7 +7,8 @@ export default class LogInForm extends Component {
 
     state = {
         userId: '',
-        password: ''
+        password: '',
+        isClicked: false
     }
 
     handleChange = name => (e) => {
@@ -17,9 +18,6 @@ export default class LogInForm extends Component {
         })
     }
 
-    componentDidMount() {
-        this.handleSubmit
-    }
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -27,26 +25,34 @@ export default class LogInForm extends Component {
             userId: this.state.userId,
             password: this.state.password
         }
-
+        localStorage.setItem("userId", this.state.userId);
+        localStorage.setItem("password", this.state.password);
         const API_HOST_URL = process.env.REACT_APP_API_HOST_URL
         const res = axios.post(`${API_HOST_URL}/api/test`, payload)
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
+
+        this.setState({ isClicked: true })
     }
 
 
     render() {
+        const userId = localStorage.getItem("userId")
+        console.log(this.state.isClicked)
         return (
             <Container>
-                <form>
-                    <label>ID</label>
-                    <input type='text' onChange={this.handleChange('userId')} />
-                    <label>Password</label>
-                    <input type='text' onChange={this.handleChange('password')} />
-                    <button onClick={this.handleSubmit}>LogIn</button>
-                </form>
-
-                <Link to='signup'><button>Register</button></Link>
+                {!this.state.isClicked ?
+                    <form>
+                        <label>ID</label>
+                        <input type='text' onChange={this.handleChange('userId')} />
+                        <label>Password</label>
+                        <input type='text' onChange={this.handleChange('password')} />
+                        <button onClick={this.handleSubmit}>LogIn</button>
+                        <Link to='signup'><button>Register</button></Link>
+                    </form>
+                    :
+                    <div>{userId ? `Welcome! ${userId}` : null}</div>
+                }
             </Container>
         )
     }

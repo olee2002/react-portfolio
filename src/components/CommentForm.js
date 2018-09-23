@@ -1,8 +1,25 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 
-export default class EssayForm extends Component {
+export default class CommentForm extends Component {
+
+    state = {
+        value: ''
+    }
+
+    handleChange = (e) => {
+        this.setState({ value: e.target.value })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const API_HOST_URL = process.env.REACT_APP_API_HOST_URL
+        const res = axios.post(`${API_HOST_URL}/api/test`, { comment: this.state.value })
+            .then((res) => console.log(res.data))
+            .catch((err) => console.log(err))
+    }
 
     render() {
         return (
@@ -10,8 +27,8 @@ export default class EssayForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <h4>Please Submit Your Comment!</h4>
                     <textarea
-                    // value={this.state.value}
-                    // onChange={this.handleChange}
+                        value={this.state.value}
+                        onChange={this.handleChange}
                     />
                     <button type="submit">Submit</button>
                 </form>
