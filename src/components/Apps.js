@@ -4,7 +4,7 @@ import ReactTooltip from 'react-tooltip';
 
 export default class Apps extends Component {
     render() {
-        const hangman = "Hangman: This is a simple word guessing game the basic idea of     which is from the hangman game.  Technologies: JavaScript, DOM, jQuery, and HTML, CSS Click image to continue. Watch out for the sound!";
+        const hangman = "Hangman: This is a simple word guessing game the basic idea of which is from the hangman game.  Technologies: JavaScript, DOM, jQuery, and HTML, CSS Click image to continue. Watch out for the sound!";
         const upnext = "UpNext: This is a Full-stack application. This app has a built in timer for the each order that will help you monitor your food prep time so you don't need to wait in line. Technologies: MongoDB, Express, Node.js, and Handle-bar/CSS";
         const myarch = "MyArchitecture: This is a Full MERN stack application.This app allows users to log in their favorite buildings in the cities they visit. Technologies: MongoDB, Express, Node.js, and React Styled-Components ";
         const citypoint = "CityPoint: This is a Full-stack application with React on Rails with many to many relationships. This app allows user to write reviews for the cities they visited. Technologies: Ruby on Rails, React,Styled-Components ";

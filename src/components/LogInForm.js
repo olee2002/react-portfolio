@@ -50,6 +50,7 @@ export default class LogInForm extends Component {
                         <input type='text' onChange={this.handleChange('password')} />
                         <button onClick={this.handleSubmit}>LogIn</button>
                         <Link to='signup'><button data-tip={guest}>Register</button></Link>
+                        <ReactTooltip className='tooltip' />
                     </form>
                     :
                     <div>{userId ? `Welcome! ${userId}!` : null}</div>
