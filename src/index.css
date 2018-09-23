@@ -36,7 +36,7 @@ body {
 
 .tooltip{
   width: 180px !important;
-  height: 150px !important;
+  height: auto !important;
   padding: 15px !important;
   text-align: left !important;
 }

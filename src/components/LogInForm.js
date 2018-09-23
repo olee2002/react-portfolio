@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import ReactTooltip from 'react-tooltip';
 import axios from 'axios';
 
 export default class LogInForm extends Component {
@@ -38,7 +39,7 @@ export default class LogInForm extends Component {
 
     render() {
         const userId = localStorage.getItem("userId")
-        console.log(this.state.isClicked)
+        const guest = `Not ready to register yet? Log in as a guest! ID:guest, PW:123`
         return (
             <Container>
                 {!this.state.isClicked ?
@@ -48,11 +49,12 @@ export default class LogInForm extends Component {
                         <label>Password</label>
                         <input type='text' onChange={this.handleChange('password')} />
                         <button onClick={this.handleSubmit}>LogIn</button>
-                        <Link to='signup'><button>Register</button></Link>
+                        <Link to='signup'><button data-tip={guest}>Register</button></Link>
                     </form>
                     :
-                    <div>{userId ? `Welcome! ${userId}` : null}</div>
+                    <div>{userId ? `Welcome! ${userId}!` : null}</div>
                 }
+
             </Container>
         )
     }
