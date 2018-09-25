@@ -2,14 +2,21 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import LogInForm from './LogInForm';
-
 const styles = {
-    textDecoration: 'none',
-    color: 'black',
-    display: 'flex',
-    alignItems: 'center',
-    height: '10vh'
+    menu: {
+        textDecoration: 'none',
+        color: 'black',
+        display: 'flex',
+        alignItems: 'center',
+        height: '10vh'
+    },
+    button: {
+        textDecoration: 'none',
+        color: 'black',
+        display: 'flex',
+        alignItems: 'center',
+        height: '10vh'
+    }
 }
 
 
@@ -17,16 +24,14 @@ class Navbar extends Component {
 
     render() {
         return (
-
             <Container>
-                <div>
-                    <NavLink><Link style={styles} to='/'><img src='images/home.svg' alt="home" />Home</Link></NavLink>
-                    <NavLink><Link style={styles} to='/apps'><img src='images/works.png' alt="works" />Apps</Link></NavLink>
-                    <NavLink><Link style={styles} to='/youtube'><img src='images/design.png' alt="youtube" />Youtube</Link></NavLink>
-                    <NavLink><Link style={styles} to='/about'><img src='images/user.png' alt="about" />About</Link></NavLink>
-                    <NavLink><a style={styles} href='https://github.com/olee2002/Portfolio/blob/master/images/olee-resume.pdf' target=''><img src='images/resume.png' alt="resume" />Résumé</a></NavLink>
-                    <LogInForm />
-                </div>
+                <div><Link style={styles.menu} to='/'><img src='images/home.svg' alt="home" /><p>Home</p></Link></div>
+                <div><Link style={styles.menu} to='/apps'><img src='images/works.png' alt="works" />Apps</Link></div>
+                <div><Link style={styles.menu} to='/youtube'><img src='images/design.png' alt="youtube" />Youtube</Link></div>
+                <div><Link style={styles.menu} to='/about'><img src='images/user.png' alt="about" />About</Link></div>
+                <div><a style={styles.menu} href='https://github.com/olee2002/Portfolio/blob/master/images/olee-resume.pdf' target=''><img src='images/resume.png' alt="resume" />Résumé</a></div>
+                <Link style={styles.button} to='/login'><button>LogIn</button></Link>
+                <Link style={styles.button} to='/signup'><button>Register</button></Link>
             </Container >)
     }
 }
@@ -46,23 +51,18 @@ const Container = styled.div`
           color:rgb(3, 3, 3);
           z-index: 999 ;
           display: flex;
-          div{
-        display: flex;
+          flex-direction: row;
+          justify-content: center;
+        align-items: center;
+        div{
+            display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        margin-left: 15px;
-          }
-                `;
-
-const NavLink = styled.div`
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width:27.5vh;
+        width:20vh;
         color: black;
         cursor: pointer;
+        border-bottom: 5px solid transparent;
 &:hover{
         border-bottom: 5px solid darkgray;
         background: rgba(0, 0,0, 0.045)
@@ -74,4 +74,21 @@ img{
         text-align: center;
         margin: 3px;
         };
-    `;
+        }
+    button{
+    height: 30px;
+    width: 100px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    &:hover{
+        background: rgba(0, 0,0, 0.045);
+        color: 'white';
+        };
+}
+}
+                `;
+
+

@@ -9,7 +9,8 @@ export default class LogInForm extends Component {
     state = {
         email: '',
         password: '',
-        isClicked: false
+        isClicked: false,
+        user: {}
     }
 
     handleChange = name => (e) => {
@@ -32,10 +33,10 @@ export default class LogInForm extends Component {
         axios.post(`${API_HOST_URL}/api/login`, payload)
             .then((res) => {
                 sessionStorage.setItem("user", JSON.stringify(res.data))
+                this.setState({ isClicked: true })
             })
             .catch((err) => console.log(err));
 
-        this.setState({ isClicked: true })
     }
 
 
@@ -52,9 +53,12 @@ export default class LogInForm extends Component {
                         <input type='text' onChange={this.handleChange('email')} />
                         <label>Password</label>
                         <input type='text' onChange={this.handleChange('password')} />
-                        <button onClick={this.handleSubmit}>LogIn</button>
-                        <Link to='signup'><button data-tip={guest}>Register</button></Link>
-                        <ReactTooltip className='tooltip' />
+                        <div>
+                            <button onClick={this.handleSubmit}>LogIn</button>
+                            <Link to='signup'><button data-tip={guest}>Register</button></Link>
+                            <ReactTooltip className='tooltip' />
+                        </div>
+
                     </form>
                     :
                     <div>{user ? `Welcome,  ${user.first_name}!` : null}</div>
@@ -65,25 +69,48 @@ export default class LogInForm extends Component {
 }
 
 const Container = styled.div`
-width: 100%;
-height: 100%;
+width: 100vw;
+height: 100vh;
 display: flex;
 /* flex-wrap: wrap; */
 justify-content: center;
 align-items: center;
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    z-index: 999 ;
+    margin-right: 50px;
+}
 label{
     margin-left: 10px;
     margin-right: 10px;
-    font-size: 12px;
+    font-size: 14px;
 };
+input{
+    height: 25px;
+    width: 300px;
+    margin: 3px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    z-index: 999;
+    font-size: 14px;
+}
 button{
-    height: 20px;
-    width: 70px;
+    height: 30px;
+    width: 100px;
     border: none;
-    margin-left: 5px;
+    margin-top: 10px;
+    margin-right: 5px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'Montserrat', sans-serif;
     box-shadow:1.5px 1.5px 0px rgba(0,0,0,0.15);
 }
+@media only screen and (max-width: 600px) {
+ width: 100vh;
+ height: 100vh;
+}
+
 `;

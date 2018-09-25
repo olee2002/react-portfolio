@@ -9,6 +9,7 @@ import Apps from './components/Apps';
 import Youtube from './components/Youtube';
 import Footer from './components/Footer';
 import SignUpForm from './components/SignUpForm';
+import LogInForm from './components/LogInForm';
 import Particles from './components/Particles';
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
               <Route exact path='/apps' component={Apps} />
               <Route exact path='/youtube' component={Youtube} />
               <Route exact path='/signup' component={SignUpForm} />
+              <Route exact path='/login' component={LogInForm} />
             </Switch>
             <Footer />
           </div>
