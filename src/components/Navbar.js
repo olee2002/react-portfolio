@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import ReactTooltip from 'react-tooltip';
 
 const styles = {
     menu: {
@@ -22,7 +23,19 @@ const styles = {
 
 class Navbar extends Component {
 
+    state = {
+        user: {}
+    }
+
+    handleLogOut = () => {
+        const user = sessionStorage.getItem("user");
+        sessionStorage.removeItem("user");
+        this.setState({ user });
+    }
+
     render() {
+        const guest = `Not ready to register yet? Log in as a guest! ID:guest, PW:123`;
+        const user = JSON.parse(sessionStorage.getItem("user"));
         return (
             <Container>
                 <div><Link style={styles.menu} to='/'><img src='images/home.svg' alt="home" /><p>Home</p></Link></div>
@@ -30,8 +43,15 @@ class Navbar extends Component {
                 <div><Link style={styles.menu} to='/youtube'><img src='images/design.png' alt="youtube" />Youtube</Link></div>
                 <div><Link style={styles.menu} to='/about'><img src='images/user.png' alt="about" />About</Link></div>
                 <div><a style={styles.menu} href='https://github.com/olee2002/Portfolio/blob/master/images/olee-resume.pdf' target=''><img src='images/resume.png' alt="resume" />Résumé</a></div>
-                <Link style={styles.button} to='/login'><button>LogIn</button></Link>
-                <Link style={styles.button} to='/signup'><button>Register</button></Link>
+
+                {!user ?
+                    <span style={styles.button}>
+                        <Link style={styles.button} to='/login'><button>LogIn</button></Link>
+                        <Link style={styles.button} to='/signup' data-tip={guest}><button>Register</button></Link>
+                    </span>
+                    : <span style={styles.button}>{`Hello, ${user.first_name}!`}<button onClick={this.handleLogOut}>LogOut</button></span>
+                }
+                <ReactTooltip className='tooltip' />
             </Container >)
     }
 }
@@ -62,6 +82,7 @@ const Container = styled.div`
         width:20vh;
         color: black;
         cursor: pointer;
+        margin-top: 5px;
         border-bottom: 5px solid transparent;
 &:hover{
         border-bottom: 5px solid darkgray;

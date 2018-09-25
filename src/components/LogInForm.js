@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import ReactTooltip from 'react-tooltip';
 import axios from 'axios';
+const API_HOST_URL = process.env.REACT_APP_API_HOST_URL;
 
 export default class LogInForm extends Component {
 
@@ -10,11 +10,11 @@ export default class LogInForm extends Component {
         email: '',
         password: '',
         isClicked: false,
+        errmsg: '',
         user: {}
     }
 
     handleChange = name => (e) => {
-        console.log(e.target.value)
         this.setState({
             [name]: e.target.value
         })
@@ -27,26 +27,26 @@ export default class LogInForm extends Component {
             email: this.state.email,
             password: this.state.password
         }
-
-
-        const API_HOST_URL = process.env.REACT_APP_API_HOST_URL
-        axios.post(`${API_HOST_URL}/api/login`, payload)
+        axios
+            .post(`${API_HOST_URL}/api/login`, payload)
             .then((res) => {
-                sessionStorage.setItem("user", JSON.stringify(res.data))
-                this.setState({ isClicked: true })
+                sessionStorage.setItem("user", JSON.stringify(res.data));
+                this.setState({ isClicked: true, user: res.data });
             })
-            .catch((err) => console.log(err));
-
+            .catch((err) => {
+                this.setState({ errmsg: JSON.stringify(err.response.data) });
+            });
     }
 
 
     render() {
 
-        const user = JSON.parse(sessionStorage.getItem("user"))
-
-        const guest = `Not ready to register yet? Log in as a guest! ID:guest, PW:123`
+        const user = JSON.parse(sessionStorage.getItem("user"));
+        // console.log(JSON.stringify(this.state.user));
+        console.log(this.state.errmsg);
         return (
             <Container>
+
                 {!this.state.isClicked && !user ?
                     <form>
                         <label>Email</label>
@@ -55,13 +55,12 @@ export default class LogInForm extends Component {
                         <input type='text' onChange={this.handleChange('password')} />
                         <div>
                             <button onClick={this.handleSubmit}>LogIn</button>
-                            <Link to='signup'><button data-tip={guest}>Register</button></Link>
-                            <ReactTooltip className='tooltip' />
+                            <Link to='signup'><button>Register</button></Link>
                         </div>
-
+                        <p style={{ fontSize: '14px', color: 'red' }}>{this.state.errmsg ? `Error Message : ${this.state.errmsg}` : null}</p>
                     </form>
                     :
-                    <div>{user ? `Welcome,  ${user.first_name}!` : null}</div>
+                    <div>{user ? `Welcome,  ${user.first_name}! Click the links above or play with bubbles.` : null}</div>
                 }
             </Container>
         )
