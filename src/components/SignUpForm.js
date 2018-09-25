@@ -32,7 +32,7 @@ export default class LogInForm extends Component {
             password: this.state.password
         }
         const API_HOST_URL = process.env.REACT_APP_API_HOST_URL;
-        axios.post(`${API_HOST_URL}/api/users`, payload)
+        axios.post(`${API_HOST_URL}/api/register`, payload)
             .then((res) => {
                 sessionStorage.setItem("user", JSON.stringify(res.data))
                 this.setState({ isRegistered: !this.state.isRegistered })
