@@ -26,11 +26,13 @@ export default class LogInForm extends Component {
             email: this.state.email,
             password: this.state.password
         }
-        sessionStorage.setItem("user", JSON.stringify(payload))
+
 
         const API_HOST_URL = process.env.REACT_APP_API_HOST_URL
-        axios.post(`${API_HOST_URL}/api/users`, payload)
-            .then((res) => console.log(res))
+        axios.post(`${API_HOST_URL}/api/login`, payload)
+            .then((res) => {
+                sessionStorage.setItem("user", JSON.stringify(res.data))
+            })
             .catch((err) => console.log(err));
 
         this.setState({ isClicked: true })
