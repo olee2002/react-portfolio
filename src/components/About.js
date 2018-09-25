@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import ReactTooltip from 'react-tooltip';
 import axios from 'axios';
 
 
@@ -13,7 +12,7 @@ export default class About extends Component {
 
     componentDidMount = () => {
         const API_HOST_URL = process.env.REACT_APP_API_HOST_URL
-        axios.get(`${API_HOST_URL}/api/test`)
+        axios.get(`${API_HOST_URL}/api/users`)
             .then((res) => {
                 console.log(res.data)
                 this.setState({ user: res.data })
@@ -25,7 +24,7 @@ export default class About extends Component {
     render() {
         return (
             <Container>
-                <img src='images/olee.jpg' ></img>
+                <img src='images/olee.jpg' alt=""></img>
                 <div><h3>Olee is a full-stack software developer with a strong design background. In her previous career as an architect, the process of designing skyscrapers trained her to break down complex problems into their constituent parts. No one could build the projects alone, it was always the result of collaborative effort. Due to that, she grew to be an excellent team player.</h3></div>
             </Container>
         )

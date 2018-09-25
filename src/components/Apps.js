@@ -13,11 +13,11 @@ export default class Apps extends Component {
         return (
             <Container>
                 <div>
-                    <a href='https://oleeshangmangame.netlify.com/' data-tip={hangman} data-type='info'><img src='images/hangman.jpg'></img></a>
-                    <a href='https://infinite-spire-33306.herokuapp.com/' data-tip={upnext} data-type='info'><img src='images/upnext.jpg'></img></a>
-                    <a href='https://my-architecture.herokuapp.com/' data-tip={myarch} data-type='info'><img src='images/myarch.jpg'></img></a>
-                    <a href='https://team-project.herokuapp.com/' data-tip={citypoint} data-type='info'><img src='images/citypoint.png'></img></a>
-                    <a href='https://o-lingo.herokuapp.com/' data-tip={olingo} data-type='info'><img src='images/olingo.png'></img></a>
+                    <a href='https://oleeshangmangame.netlify.com/' data-tip={hangman} data-type='info'><img src='images/hangman.jpg' alt="hangman"></img></a>
+                    <a href='https://infinite-spire-33306.herokuapp.com/' data-tip={upnext} data-type='info'><img src='images/upnext.jpg' alt="upnext"></img></a>
+                    <a href='https://my-architecture.herokuapp.com/' data-tip={myarch} data-type='info'><img src='images/myarch.jpg' alt="myarch"></img></a>
+                    <a href='https://team-project.herokuapp.com/' data-tip={citypoint} data-type='info'><img src='images/citypoint.png' alt="citypoint"></img></a>
+                    <a href='https://o-lingo.herokuapp.com/' data-tip={olingo} data-type='info'><img src='images/olingo.png' alt="olingo"></img></a>
                     <ReactTooltip className='tooltip' />
                 </div>
             </Container>

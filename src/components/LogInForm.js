@@ -7,7 +7,7 @@ import axios from 'axios';
 export default class LogInForm extends Component {
 
     state = {
-        userId: '',
+        email: '',
         password: '',
         isClicked: false
     }
@@ -23,13 +23,13 @@ export default class LogInForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         const payload = {
-            userId: this.state.userId,
+            email: this.state.email,
             password: this.state.password
         }
-        localStorage.setItem("userId", this.state.userId);
-        localStorage.setItem("password", this.state.password);
+        sessionStorage.setItem("user", JSON.stringify(payload))
+
         const API_HOST_URL = process.env.REACT_APP_API_HOST_URL
-        const res = axios.post(`${API_HOST_URL}/api/test`, payload)
+        axios.post(`${API_HOST_URL}/api/users`, payload)
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
 
@@ -38,14 +38,16 @@ export default class LogInForm extends Component {
 
 
     render() {
-        const userId = localStorage.getItem("userId")
+
+        const user = JSON.parse(sessionStorage.getItem("user"))
+
         const guest = `Not ready to register yet? Log in as a guest! ID:guest, PW:123`
         return (
             <Container>
-                {!this.state.isClicked ?
+                {!this.state.isClicked && !user ?
                     <form>
-                        <label>ID</label>
-                        <input type='text' onChange={this.handleChange('userId')} />
+                        <label>Email</label>
+                        <input type='text' onChange={this.handleChange('email')} />
                         <label>Password</label>
                         <input type='text' onChange={this.handleChange('password')} />
                         <button onClick={this.handleSubmit}>LogIn</button>
@@ -53,7 +55,7 @@ export default class LogInForm extends Component {
                         <ReactTooltip className='tooltip' />
                     </form>
                     :
-                    <div>{userId ? `Welcome! ${userId}!` : null}</div>
+                    <div>{user ? `Welcome! ${user.userId}!` : null}</div>
                 }
 
             </Container>

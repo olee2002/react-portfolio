@@ -9,8 +9,8 @@ export default class Youtube extends Component {
                 <div><h3>Checkout my coding video on youtube!</h3></div><br />
                 <div><a href='https://www.youtube.com/channel/UC8E39wGNPoEV6W-bj7lLpDA/featured?view_as=public'>Click here (Olee's Youtube Channel) for more videos!</a></div>
                 <div>
-                    <iframe src="https://www.youtube.com/embed/tn3Pug4P0uI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/e5eFE0x5EhI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/tn3Pug4P0uI" title="1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/e5eFE0x5EhI" title="2" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </Container>
         )

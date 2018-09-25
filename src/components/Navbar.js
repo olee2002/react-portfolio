@@ -20,11 +20,11 @@ class Navbar extends Component {
 
             <Container>
                 <div>
-                    <NavLink><Link style={styles} to='/'><img src='images/home.svg' />Home</Link></NavLink>
-                    <NavLink><Link style={styles} to='/apps'><img src='images/works.png' />Apps</Link></NavLink>
-                    <NavLink><Link style={styles} to='/youtube'><img src='images/design.png' />Youtube</Link></NavLink>
-                    <NavLink><Link style={styles} to='/about'><img src='images/user.png' />About</Link></NavLink>
-                    <NavLink><a style={styles} href='https://github.com/olee2002/Portfolio/blob/master/images/olee-resume.pdf' target=''><img src='images/resume.png' />Résumé</a></NavLink>
+                    <NavLink><Link style={styles} to='/'><img src='images/home.svg' alt="home" />Home</Link></NavLink>
+                    <NavLink><Link style={styles} to='/apps'><img src='images/works.png' alt="works" />Apps</Link></NavLink>
+                    <NavLink><Link style={styles} to='/youtube'><img src='images/design.png' alt="youtube" />Youtube</Link></NavLink>
+                    <NavLink><Link style={styles} to='/about'><img src='images/user.png' alt="about" />About</Link></NavLink>
+                    <NavLink><a style={styles} href='https://github.com/olee2002/Portfolio/blob/master/images/olee-resume.pdf' target=''><img src='images/resume.png' alt="resume" />Résumé</a></NavLink>
                     <LogInForm />
                 </div>
             </Container >)
@@ -51,6 +51,7 @@ const Container = styled.div`
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        margin-left: 15px;
           }
                 `;
 
@@ -59,7 +60,7 @@ const NavLink = styled.div`
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        width:30vh;
+        width:27.5vh;
         color: black;
         cursor: pointer;
 &:hover{

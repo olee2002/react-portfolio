@@ -9,13 +9,13 @@ export default class LogInForm extends Component {
     state = {
         firstName: '',
         lastName: '',
-        userId: '',
-        password: ''
+        email: '',
+        password: '',
+        isRegistered: false
     }
 
     handleChange = name => {
         return (e) => {
-            console.log(e.target.value)
             this.setState({
                 [name]: e.target.value
             })
@@ -28,20 +28,25 @@ export default class LogInForm extends Component {
         const payload = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
-            userId: this.state.userId,
+            email: this.state.email,
             password: this.state.password
         }
-        const API_HOST_URL = process.env.REACT_APP_API_HOST_URL
-        const res = axios.post(`${API_HOST_URL}/api/test`, payload)
-            .then((res) => console.log(res))
-            .catch((err) => console.log(err));
+        const API_HOST_URL = process.env.REACT_APP_API_HOST_URL;
+        axios.post(`${API_HOST_URL}/api/users`, payload)
+            .then((res) => {
+                sessionStorage.setItem("user", JSON.stringify(res.data))
+                this.setState({ isRegistered: !this.state.isRegistered })
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
 
     render() {
         return (
             <Container>
-                <SubContainer>
+                {!this.state.isRegistered ?
 
                     <form>
                         <h3>Please Sign Up!</h3>
@@ -54,8 +59,8 @@ export default class LogInForm extends Component {
                             <input type='text' onChange={this.handleChange('lastName')} />
                         </div>
                         <div>
-                            <label>ID</label>
-                            <input type='text' onChange={this.handleChange('userId')} />
+                            <label>Email</label>
+                            <input type='text' onChange={this.handleChange('email')} />
                         </div>
                         <div>
                             <label>Password</label>
@@ -65,9 +70,8 @@ export default class LogInForm extends Component {
                             <button onClick={this.handleSubmit}>Submit</button>
                         </div>
                     </form>
-                </SubContainer>
-                <CommentForm />
-
+                    :
+                    <Message>You are successfully Registered! Please log in to proceed!</Message>}
             </Container>
         )
     }
@@ -115,8 +119,10 @@ button{
 }
 `;
 
-const SubContainer = styled.div`
+
+const Message = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    margin-right: 20px;
 `;

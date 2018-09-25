@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const styles = {
@@ -11,11 +11,11 @@ const styles = {
 
 const Footer = () =>
     <Container>
-        <div><a style={styles} href='https://github.com/olee2002' title="GitHub"><img src='images/github.png' /></a></div>
+        <div><a style={styles} href='https://github.com/olee2002' title="GitHub"><img src='images/github.png' alt="" /></a></div>
         |
-        <div><a style={styles} href='https://www.linkedin.com/in/ok-hyun-lee-8467877' title="LinkedIn"><img src='images/linked.png' /></a></div>
+        <div><a style={styles} href='https://www.linkedin.com/in/ok-hyun-lee-8467877' title="LinkedIn"><img src='images/linked.png' alt="" /></a></div>
         |
-        <div><a style={styles} href="mailto:babylee2002@gmail.com" target="" title="Email"><img src='images/mail.png' /></a></div>
+        <div><a style={styles} href="mailto:babylee2002@gmail.com" target="" title="Email"><img src='images/mail.png' alt="" /></a></div>
     </Container >
 
 

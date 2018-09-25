@@ -6,7 +6,8 @@ import axios from 'axios';
 export default class CommentForm extends Component {
 
     state = {
-        value: ''
+        value: '',
+        isRegistered: false
     }
 
     handleChange = (e) => {
@@ -16,22 +17,28 @@ export default class CommentForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         const API_HOST_URL = process.env.REACT_APP_API_HOST_URL
-        const res = axios.post(`${API_HOST_URL}/api/test`, { comment: this.state.value })
-            .then((res) => console.log(res.data))
-            .catch((err) => console.log(err))
+        axios.post(`${API_HOST_URL}/api/test`, { comment: this.state.value })
+            .then((res) => {
+                localStorage.setItem("user", JSON.stringify(res.data))
+                this.setState({ isRegistered: !this.state.isRegistered })
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }
 
     render() {
         return (
             <Container>
-                <form onSubmit={this.handleSubmit}>
-                    <h4>Please Submit Your Comment!</h4>
-                    <textarea
-                        value={this.state.value}
-                        onChange={this.handleChange}
-                    />
-                    <button type="submit">Submit</button>
-                </form>
+                {!this.state.isRegistered ?
+                    <form onSubmit={this.handleSubmit}>
+                        <h4>Please Submit Your Comment!</h4>
+                        <textarea
+                            value={this.state.value}
+                            onChange={this.handleChange}
+                        />
+                        <button type="submit">Submit</button>
+                    </form> : <div>Successfully Registered!</div>}
             </Container>
         )
     }
