@@ -55,9 +55,8 @@ export default class LogInForm extends Component {
                         <ReactTooltip className='tooltip' />
                     </form>
                     :
-                    <div>{user ? `Welcome! ${user.userId}!` : null}</div>
+                    <div>{user ? `Welcome,  ${user.first_name}!` : null}</div>
                 }
-
             </Container>
         )
     }

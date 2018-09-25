@@ -11,7 +11,8 @@ export default class LogInForm extends Component {
         lastName: '',
         email: '',
         password: '',
-        isRegistered: false
+        isRegistered: false,
+        user: {}
     }
 
     handleChange = name => {
@@ -35,7 +36,7 @@ export default class LogInForm extends Component {
         axios.post(`${API_HOST_URL}/api/register`, payload)
             .then((res) => {
                 sessionStorage.setItem("user", JSON.stringify(res.data))
-                this.setState({ isRegistered: !this.state.isRegistered })
+                this.setState({ isRegistered: !this.state.isRegistered, user: res.data })
             })
             .catch((err) => {
                 console.log(err);
@@ -44,9 +45,10 @@ export default class LogInForm extends Component {
 
 
     render() {
+        const user = sessionStorage.getItem("user");
         return (
             <Container>
-                {!this.state.isRegistered ?
+                {!this.state.isRegistered && !user ?
 
                     <form>
                         <h3>Please Sign Up!</h3>
