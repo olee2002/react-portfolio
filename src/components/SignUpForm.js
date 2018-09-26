@@ -66,7 +66,7 @@ export default class LogInForm extends Component {
                         </div>
                         <div>
                             <label>Password</label>
-                            <input type='text' onChange={this.handleChange('password')} />
+                            <input type='password' onChange={this.handleChange('password')} />
                         </div>
                         <div>
                             <button onClick={this.handleSubmit}>Submit</button>

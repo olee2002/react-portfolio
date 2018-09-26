@@ -20,7 +20,6 @@ const styles = {
     }
 }
 
-
 class Navbar extends Component {
 
     state = {

@@ -28,7 +28,6 @@ export default class LogInForm extends Component {
             email: this.state.email,
             password: this.state.password
         }
-        console.log(this.state.email, this.state.password)
         if (this.state.email === 'guest' && this.state.password === '123') {
             const user = {
                 first_name: 'guest',
@@ -63,12 +62,12 @@ export default class LogInForm extends Component {
                         <label>Email</label>
                         <input type='text' onChange={this.handleChange('email')} />
                         <label>Password</label>
-                        <input type='text' onChange={this.handleChange('password')} />
+                        <input type='password' onChange={this.handleChange('password')} />
                         <div>
                             <button onClick={this.handleSubmit}>LogIn</button>
                             <Link to='signup'><button>Register</button></Link>
                         </div>
-                        <p style={{ fontSize: '14px', color: 'red' }}>{this.state.errmsg ? `Error Message : ${this.state.errmsg}` : null}</p>
+                        <p style={{ fontSize: '12px', color: 'red' }}>{this.state.errmsg ? `Error Message : ${this.state.errmsg}` : null}</p>
                     </form>
                     :
                     <div>{user ? `Welcome,  ${user.first_name}! Click the links above or play with bubbles.` : null}</div>
