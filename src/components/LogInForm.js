@@ -10,6 +10,7 @@ export default class LogInForm extends Component {
         email: '',
         password: '',
         isClicked: false,
+        passwordShown: false,
         errmsg: '',
         user: {}
     }
@@ -19,7 +20,12 @@ export default class LogInForm extends Component {
             [name]: e.target.value.toLowerCase().toString()
         });
     }
-
+    handlePassword = (e) => {
+        e.preventDefault();
+        this.setState({
+            passwordShown: !this.state.passwordShown
+        });
+    }
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -56,13 +62,21 @@ export default class LogInForm extends Component {
             <Container>
                 {!this.state.isClicked && !user ?
                     <form>
-                        <label>Email</label>
-                        <input type='text' onChange={this.handleChange('email')} />
-                        <label>Password</label>
-                        <input type='password' onChange={this.handleChange('password')} />
                         <div>
-                            <button onClick={this.handleSubmit}>LogIn</button>
-                            <Link to='signup'><button>Register</button></Link>
+                            <label>Email</label>
+                            <input type='text' onChange={this.handleChange('email')} />
+                        </div>
+                        <div>
+                            <label>Password</label>
+                            <input type={!this.state.passwordShown ? 'password' : 'text'} onChange={this.handleChange('password')} />
+                        </div>
+                        <div>
+                            <button style={{ width: '200px' }} onClick={this.handlePassword}>
+                                {!this.state.passwordShown ? 'Show Password' : 'Hide Password'}
+                            </button>
+                            <button onClick={this.handleSubmit}>
+                                LogIn
+                            </button>
                         </div>
                         <p style={{ fontSize: '12px', color: 'red' }}>{this.state.errmsg ? `Error Message : ${this.state.errmsg}` : null}</p>
                     </form>
@@ -97,10 +111,10 @@ input{
     height: 25px;
     width: 300px;
     margin: 3px;
-    border-radius: 5px;
     border: 1px solid lightgray;
     z-index: 999;
     font-size: 14px;
+    background: #ffffff;
 }
 button{
     height: 30px;

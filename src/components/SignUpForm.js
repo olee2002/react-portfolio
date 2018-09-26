@@ -9,7 +9,7 @@ export default class LogInForm extends Component {
         lastName: '',
         email: '',
         password: '',
-        pwVisibility: false,
+        passwordShown: false,
         isRegistered: false,
         user: {}
     }
@@ -43,12 +43,12 @@ export default class LogInForm extends Component {
     }
     handlePassword = (e) => {
         e.preventDefault();
-        this.setState({ pwVisibility: !this.state.pwVisibility })
+        this.setState({ passwordShown: !this.state.passwordShown })
     }
 
     render() {
         const user = sessionStorage.getItem("user");
-        const { pwVisibility } = this.state;
+        const { passwordShown } = this.state;
         return (
             <Container>
                 {!this.state.isRegistered && !user ?
@@ -69,20 +69,13 @@ export default class LogInForm extends Component {
                         </div>
                         <div>
                             <label>Password</label>
-                            <span>
-                                <input type={!pwVisibility ? 'password' : 'text'}
-                                    onChange={this.handleChange('password')}></input>
-                                <button onClick={this.handlePassword}
-                                    style={{
-                                        marginLeft: '-100px',
-                                        border: 'none',
-                                        boxShadow: 'none',
-                                        height: '23px',
-                                        width: '90px'
-                                    }}>{!pwVisibility ? 'show' : 'hide'}</button>
-                            </span>
+                            <input type={!passwordShown ? 'password' : 'text'}
+                                onChange={this.handleChange('password')} />
                         </div>
                         <div>
+                            <button
+                                onClick={this.handlePassword}
+                                style={{ width: '200px' }}>{passwordShown ? 'hide password' : 'show password'}</button>
                             <button onClick={this.handleSubmit}>Submit</button>
                         </div>
                     </form>
@@ -117,7 +110,6 @@ input{
     height: 25px;
     width: 300px;
     margin: 3px;
-    border-radius: 5px;
     border: 1px solid lightgray;
     z-index: 999;
     font-size: 14px;
@@ -128,7 +120,6 @@ button{
     border: none;
     margin-top: 10px;
     margin-right: 5px;
-    border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
