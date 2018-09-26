@@ -17,8 +17,7 @@ export default class LogInForm extends Component {
     handleChange = name => (e) => {
         this.setState({
             [name]: e.target.value.toLowerCase().toString()
-        })
-
+        });
     }
 
 
@@ -52,11 +51,9 @@ export default class LogInForm extends Component {
     render() {
 
         const user = JSON.parse(sessionStorage.getItem("user"));
-        // console.log(JSON.stringify(this.state.user));
-        console.log(this.state.errmsg);
+
         return (
             <Container>
-
                 {!this.state.isClicked && !user ?
                     <form>
                         <label>Email</label>
@@ -81,7 +78,6 @@ const Container = styled.div`
 width: 100vw;
 height: 100vh;
 display: flex;
-/* flex-wrap: wrap; */
 justify-content: center;
 align-items: center;
 form{

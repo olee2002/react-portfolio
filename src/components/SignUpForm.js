@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
-import CommentForm from './CommentForm';
-
 export default class LogInForm extends Component {
 
     state = {
@@ -11,6 +9,7 @@ export default class LogInForm extends Component {
         lastName: '',
         email: '',
         password: '',
+        pwVisibility: false,
         isRegistered: false,
         user: {}
     }
@@ -42,10 +41,14 @@ export default class LogInForm extends Component {
                 console.log(err);
             });
     }
-
+    handlePassword = (e) => {
+        e.preventDefault();
+        this.setState({ pwVisibility: !this.state.pwVisibility })
+    }
 
     render() {
         const user = sessionStorage.getItem("user");
+        const { pwVisibility } = this.state;
         return (
             <Container>
                 {!this.state.isRegistered && !user ?
@@ -66,7 +69,18 @@ export default class LogInForm extends Component {
                         </div>
                         <div>
                             <label>Password</label>
-                            <input type='password' onChange={this.handleChange('password')} />
+                            <span>
+                                <input type={!pwVisibility ? 'password' : 'text'}
+                                    onChange={this.handleChange('password')}></input>
+                                <button onClick={this.handlePassword}
+                                    style={{
+                                        marginLeft: '-100px',
+                                        border: 'none',
+                                        boxShadow: 'none',
+                                        height: '23px',
+                                        width: '90px'
+                                    }}>{!pwVisibility ? 'show' : 'hide'}</button>
+                            </span>
                         </div>
                         <div>
                             <button onClick={this.handleSubmit}>Submit</button>
@@ -114,6 +128,7 @@ button{
     border: none;
     margin-top: 10px;
     margin-right: 5px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
