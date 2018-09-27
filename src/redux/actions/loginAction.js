@@ -1,9 +1,8 @@
 import { LOGIN_STARTED, LOGIN_SUCEEDED, LOGIN_FAILD } from './loginType';
 import axios from 'axios';
 const API_HOST_URL = process.env.REACT_APP_API_HOST_URL;
-console.log('host', API_HOST_URL)
+
 export const postUsers = (payload) => dispatch => {
-    console.log('payload', payload)
     axios
         .post(`${API_HOST_URL}/api/login`, payload)
         .then((res) => {
@@ -11,6 +10,6 @@ export const postUsers = (payload) => dispatch => {
             dispatch({ type: LOGIN_SUCEEDED, data: res.data })
         })
         .catch((err) => {
-            dispatch({ type: LOGIN_FAILD, data: err.response.data });
+            dispatch({ type: LOGIN_FAILD, data: err });
         });
-} 
+}

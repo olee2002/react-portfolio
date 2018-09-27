@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import ReactTooltip from 'react-tooltip';
+
+import { postUsers } from '../redux/actions/loginAction'
 
 const styles = {
     menu: {
@@ -23,12 +26,14 @@ const styles = {
 class Navbar extends Component {
 
     state = {
-        user: {}
+        user: {},
+        fetched: false
     }
 
     handleLogOut = () => {
         const user = sessionStorage.getItem("user");
         sessionStorage.removeItem("user");
+        this.props.postUsers()
         this.setState({ user });
     }
 
@@ -48,15 +53,33 @@ class Navbar extends Component {
                         <Link style={styles.button} to='/login'><button>LogIn</button></Link>
                         <Link style={styles.button} to='/signup' data-tip={guest}><button>Register</button></Link>
                     </span>
-                    : <span style={styles.button}>{`Hello, ${user.first_name}!`}<button onClick={this.handleLogOut}>LogOut</button></span>
+                    :
+                    !this.state.fetched ? <span style={styles.button}>
+                        {`Hello, ${user.first_name}!`}
+                        <button onClick={this.handleLogOut}>
+                            LogOut
+                    </button>
+                    </span> : null
                 }
                 <ReactTooltip className='tooltip' />
             </Container >)
     }
 }
 
-export default Navbar;
+const mapStateToProps = state => ({
+    state: state,
+    user: state.user,
+    errmsg: state.errmsg,
+    fetching: state.feching,
+    fetched: state.feched
 
+});
+
+const mapDispatchToProps = dispatch => ({
+    postUsers: (payload) => dispatch(postUsers(payload))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
 
 const Container = styled.div`
           width: 100vw;

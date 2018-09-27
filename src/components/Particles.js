@@ -1,7 +1,7 @@
 import React from 'react';
 import Particles from 'react-particles-js';
 
-export default () => {
+const Particle = () => {
     return (
         <Particles
             className='particles'
@@ -124,5 +124,7 @@ export default () => {
             } />
     )
 }
+
+export default Particle;
 
 

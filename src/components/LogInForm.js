@@ -9,10 +9,25 @@ class LogInForm extends Component {
     state = {
         email: '',
         password: '',
-        isClicked: false,
         passwordShown: false,
         errmsg: '',
-        user: {}
+        user: {},
+        fetching: false,
+        fetched: false
+    }
+
+    componentDidMount = () => {
+        this.handleSubmit;
+    }
+
+    componentWillReceiveProps = (nextProps) => {
+        console.log(nextProps)
+        this.setState({
+            user: nextProps.state.login.user,
+            errmsg: nextProps.state.login.errmsg,
+            fetching: nextProps.state.login.feching,
+            fetched: nextProps.state.login.feched
+        })
     }
 
     handleChange = name => (e) => {
@@ -39,22 +54,22 @@ class LogInForm extends Component {
                 password: this.state.password
             }
             sessionStorage.setItem("user", JSON.stringify(user));
-            this.setState({ isClicked: true });
+            this.setState({ fetched: true });
         } else {
             this.props.postUsers(payload)
+            if (this.state.fetched) this.setState({ fetched: true });
+
         }
     }
 
 
     render() {
-
         const user = JSON.parse(sessionStorage.getItem("user"));
-        // console.log(this.state, this.props)
-
         return (
             <Container>
-                {!this.state.isClicked && !user ?
+                {!this.state.fetched && !user ?
                     <form>
+                        <p style={{ fontSize: '12px', color: 'red' }}>{this.state.errmsg ? `Error Message : ${this.state.errmsg.response.data}` : null}</p>
                         <div>
                             <label>Email</label>
                             <input type='text' onChange={this.handleChange('email')} />
@@ -71,7 +86,6 @@ class LogInForm extends Component {
                                 LogIn
                             </button>
                         </div>
-                        <p style={{ fontSize: '12px', color: 'red' }}>{this.state.errmsg ? `Error Message : ${this.state.errmsg}` : null}</p>
                     </form>
                     :
                     <div>{user ? `Welcome,  ${user.first_name}! Click the links above or play with bubbles.` : null}</div>
@@ -81,6 +95,7 @@ class LogInForm extends Component {
     }
 }
 const mapStateToProps = state => ({
+    state: state,
     user: state.user,
     errmsg: state.errmsg,
     fetching: state.feching,
