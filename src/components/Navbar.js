@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactTooltip from 'react-tooltip';
 
-import { postUsers } from '../redux/actions/loginAction'
+import { postUsers } from '../redux/actions/loginActionCreator'
 
 const styles = {
     menu: {
@@ -26,8 +26,7 @@ const styles = {
 class Navbar extends Component {
 
     state = {
-        user: {},
-        fetched: false
+        user: {}
     }
 
     handleLogOut = () => {
@@ -54,12 +53,12 @@ class Navbar extends Component {
                         <Link style={styles.button} to='/signup' data-tip={guest}><button>Register</button></Link>
                     </span>
                     :
-                    !this.state.fetched ? <span style={styles.button}>
+                    <span style={styles.button}>
                         {`Hello, ${user.first_name}!`}
                         <button onClick={this.handleLogOut}>
                             LogOut
                     </button>
-                    </span> : null
+                    </span>
                 }
                 <ReactTooltip className='tooltip' />
             </Container >)
@@ -67,12 +66,7 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = state => ({
-    state: state,
-    user: state.user,
-    errmsg: state.errmsg,
-    fetching: state.feching,
-    fetched: state.feched
-
+    state
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { postUsers } from '../redux/actions/loginAction';
+import { postUsers } from '../redux/actions/loginActionCreator';
 
 
 class LogInForm extends Component {
@@ -16,12 +16,10 @@ class LogInForm extends Component {
         fetched: false
     }
 
-    componentDidMount = () => {
-        this.handleSubmit;
-    }
+
 
     componentWillReceiveProps = (nextProps) => {
-        console.log(nextProps)
+
         this.setState({
             user: nextProps.state.login.user,
             errmsg: nextProps.state.login.errmsg,

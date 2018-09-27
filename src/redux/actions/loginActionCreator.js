@@ -1,5 +1,6 @@
-import { LOGIN_STARTED, LOGIN_SUCEEDED, LOGIN_FAILD } from './loginType';
+import { LOGIN_SUCEEDED, LOGIN_FAILD } from './action';
 import axios from 'axios';
+
 const API_HOST_URL = process.env.REACT_APP_API_HOST_URL;
 
 export const postUsers = (payload) => dispatch => {
