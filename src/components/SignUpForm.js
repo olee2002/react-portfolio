@@ -73,10 +73,12 @@ export default class LogInForm extends Component {
                                 onChange={this.handleChange('password')} />
                         </div>
                         <div>
-                            <button
-                                onClick={this.handlePassword}
-                                style={{ width: '200px' }}>{passwordShown ? 'hide password' : 'show password'}</button>
-                            <button onClick={this.handleSubmit}>Submit</button>
+                            <button onClick={this.handlePassword}>
+                                {passwordShown ? 'hide password' : 'show password'}
+                            </button>
+                            <button onClick={this.handleSubmit}>
+                                Submit
+                            </button>
                         </div>
                     </form>
                     :
@@ -116,7 +118,7 @@ input{
 }
 button{
     height: 30px;
-    width: 100px;
+    width: 150px;
     border: none;
     margin-top: 10px;
     margin-right: 5px;

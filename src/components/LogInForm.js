@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import axios from 'axios';
-const API_HOST_URL = process.env.REACT_APP_API_HOST_URL;
+import { connect } from 'react-redux';
+import { postUsers } from '../redux/actions/loginAction';
 
-export default class LogInForm extends Component {
+
+class LogInForm extends Component {
 
     state = {
         email: '',
@@ -41,15 +41,7 @@ export default class LogInForm extends Component {
             sessionStorage.setItem("user", JSON.stringify(user));
             this.setState({ isClicked: true });
         } else {
-            axios
-                .post(`${API_HOST_URL}/api/login`, payload)
-                .then((res) => {
-                    sessionStorage.setItem("user", JSON.stringify(res.data));
-                    this.setState({ isClicked: true, user: res.data });
-                })
-                .catch((err) => {
-                    this.setState({ errmsg: JSON.stringify(err.response.data) });
-                });
+            this.props.postUsers(payload)
         }
     }
 
@@ -57,6 +49,7 @@ export default class LogInForm extends Component {
     render() {
 
         const user = JSON.parse(sessionStorage.getItem("user"));
+        // console.log(this.state, this.props)
 
         return (
             <Container>
@@ -71,7 +64,7 @@ export default class LogInForm extends Component {
                             <input type={!this.state.passwordShown ? 'password' : 'text'} onChange={this.handleChange('password')} />
                         </div>
                         <div>
-                            <button style={{ width: '200px' }} onClick={this.handlePassword}>
+                            <button onClick={this.handlePassword}>
                                 {!this.state.passwordShown ? 'Show Password' : 'Hide Password'}
                             </button>
                             <button onClick={this.handleSubmit}>
@@ -84,9 +77,22 @@ export default class LogInForm extends Component {
                     <div>{user ? `Welcome,  ${user.first_name}! Click the links above or play with bubbles.` : null}</div>
                 }
             </Container>
-        )
+        );
     }
 }
+const mapStateToProps = state => ({
+    user: state.user,
+    errmsg: state.errmsg,
+    fetching: state.feching,
+    fetched: state.feched
+
+});
+
+const mapDispatchToProps = dispatch => ({
+    postUsers: (payload) => dispatch(postUsers(payload))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LogInForm);
 
 const Container = styled.div`
 width: 100vw;
@@ -118,7 +124,7 @@ input{
 }
 button{
     height: 30px;
-    width: 100px;
+    width: 150px;
     border: none;
     margin-top: 10px;
     margin-right: 5px;
