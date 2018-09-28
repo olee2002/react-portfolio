@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactTooltip from 'react-tooltip';
 
-import { postUsers } from '../redux/actions/loginActionCreator'
+import { logInUsers } from '../redux/actions/loginActionCreator'
 
 const styles = {
     menu: {
@@ -32,7 +32,7 @@ class Navbar extends Component {
     handleLogOut = () => {
         const user = sessionStorage.getItem("user");
         sessionStorage.removeItem("user");
-        this.props.postUsers()
+        this.props.logInUsers()
         this.setState({ user });
     }
 
@@ -70,7 +70,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    postUsers: (payload) => dispatch(postUsers(payload))
+    logInUsers: (payload) => dispatch(logInUsers(payload))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

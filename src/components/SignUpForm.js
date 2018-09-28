@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
+import { connect } from 'react-redux';
 
-export default class LogInForm extends Component {
+import { registerUsers } from '../redux/actions/signupActionCreator';
+
+class SignUpForm extends Component {
 
     state = {
         firstName: '',
@@ -31,15 +33,7 @@ export default class LogInForm extends Component {
             email: this.state.email,
             password: this.state.password
         }
-        const API_HOST_URL = process.env.REACT_APP_API_HOST_URL;
-        axios.post(`${API_HOST_URL}/api/register`, payload)
-            .then((res) => {
-                sessionStorage.setItem("user", JSON.stringify(res.data))
-                this.setState({ isRegistered: !this.state.isRegistered, user: res.data })
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        this.props.registerUsers(payload);
     }
     handlePassword = (e) => {
         e.preventDefault();
@@ -87,6 +81,21 @@ export default class LogInForm extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    state: state,
+    user: state.user,
+    errmsg: state.errmsg,
+    fetched: state.feched
+
+});
+
+const mapDispatchToProps = dispatch => ({
+    registerUsers: (payload) => dispatch(registerUsers(payload))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);
+
 
 const Container = styled.div`
 width: 100vw;

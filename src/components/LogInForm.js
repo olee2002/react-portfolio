@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { postUsers } from '../redux/actions/loginActionCreator';
+import { logInUsers } from '../redux/actions/loginActionCreator';
 
 
 class LogInForm extends Component {
@@ -12,20 +12,16 @@ class LogInForm extends Component {
         passwordShown: false,
         errmsg: '',
         user: {},
-        fetching: false,
         fetched: false
     }
-
-
 
     componentWillReceiveProps = (nextProps) => {
 
         this.setState({
-            user: nextProps.state.login.user,
-            errmsg: nextProps.state.login.errmsg,
-            fetching: nextProps.state.login.feching,
-            fetched: nextProps.state.login.feched
-        })
+            user: nextProps.state.login ? nextProps.state.login.user : {},
+            errmsg: nextProps.state.login ? nextProps.state.login.errmsg : '',
+            fetched: nextProps.state.login ? nextProps.state.login.feched : false
+        });
     }
 
     handleChange = name => (e) => {
@@ -54,7 +50,7 @@ class LogInForm extends Component {
             sessionStorage.setItem("user", JSON.stringify(user));
             this.setState({ fetched: true });
         } else {
-            this.props.postUsers(payload)
+            this.props.logInUsers(payload)
             if (this.state.fetched) this.setState({ fetched: true });
 
         }
@@ -102,7 +98,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    postUsers: (payload) => dispatch(postUsers(payload))
+    logInUsers: (payload) => dispatch(logInUsers(payload))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LogInForm);

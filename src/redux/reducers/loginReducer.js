@@ -1,4 +1,4 @@
-import { LOGIN_SUCEEDED, LOGIN_FAILD } from '../actions/action'
+import { LOGIN_SUCEEDED, LOGIN_FAILED } from '../actions/actionType'
 
 const initialState = {
     user: {},
@@ -9,9 +9,9 @@ const initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
         case LOGIN_SUCEEDED:
-            return { ...state, fetching: false, fetched: true, user: action.data };
-        case LOGIN_FAILD:
-            return { ...state, fetching: false, errmsg: action.data };
+            return { ...state, fetched: true, user: action.data };
+        case LOGIN_FAILED:
+            return { ...state, fetched: false, errmsg: action.data };
         default:
             return null;
     }
