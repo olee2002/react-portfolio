@@ -26,7 +26,7 @@ class LogInForm extends Component {
 
     handleChange = name => (e) => {
         this.setState({
-            [name]: e.target.value.toLowerCase().toString()
+            [name]: e.target.value.toLowerCase().toString(), errmsg: ''
         });
     }
     handlePassword = (e) => {
