@@ -13,27 +13,36 @@ class SignUpForm extends Component {
         password: '',
         passwordShown: false,
         isRegistered: false,
+        errmsg: '',
         user: {}
+    }
+
+    componentWillReceiveProps = (nextProps) => {
+        const { user, errmsg, fetched } = nextProps.state.signup;
+        this.setState({
+            user: user,
+            errmsg: errmsg,
+            fetched: fetched
+        })
     }
 
     handleChange = name => {
         return (e) => {
             this.setState({
-                [name]: e.target.value
+                [name]: e.target.value, errmsg: ''
             });
         }
     }
 
     handleSubmit = (e) => {
-
+        const { firstName, lastName, email, password, passwordShown } = this.state;
         e.preventDefault();
-        const payload = {
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            email: this.state.email,
-            password: this.state.password
+        const payload = { firstName, lastName, email, password }
+        if (firstName && lastName && email && password) {
+            this.props.registerUsers(payload);
+        } else {
+            this.setState({ errmsg: 'All Fields Required!' });
         }
-        this.props.registerUsers(payload);
     }
     handlePassword = (e) => {
         e.preventDefault();
@@ -43,12 +52,14 @@ class SignUpForm extends Component {
     render() {
         const user = sessionStorage.getItem("user");
         const { passwordShown } = this.state;
+        const { errmsg } = this.state;
         return (
             <Container>
                 {!this.state.isRegistered && !user ?
 
                     <form>
                         <h3>Please Sign Up!</h3>
+                        <div style={{ fontSize: '12px', color: 'red' }}>{errmsg ? errmsg : null}</div>
                         <div>
                             <label>Firstname</label>
                             <input type='text' onChange={this.handleChange('firstName')} />
@@ -63,7 +74,9 @@ class SignUpForm extends Component {
                         </div>
                         <div>
                             <label>Password</label>
-                            <input type={!passwordShown ? 'password' : 'text'}
+                            <input
+                                required={true}
+                                type={!passwordShown ? 'password' : 'text'}
                                 onChange={this.handleChange('password')} />
                         </div>
                         <div>

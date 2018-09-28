@@ -11,6 +11,6 @@ export const registerUsers = (payload) => dispatch => {
             dispatch({ type: SIGNUP_SUCEEDED, data: res.data })
         })
         .catch((err) => {
-            dispatch({ type: SIGNUP_FAILED, data: err });
+            dispatch({ type: SIGNUP_FAILED, data: err.response.data });
         });
 }
