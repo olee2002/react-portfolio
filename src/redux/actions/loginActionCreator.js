@@ -1,9 +1,12 @@
-import { LOGIN_SUCEEDED, LOGIN_FAILED } from './actionType';
+import { LOGIN_GUEST, LOGIN_SUCEEDED, LOGIN_FAILED } from './actionType';
 import axios from 'axios';
 
 const API_HOST_URL = process.env.REACT_APP_API_HOST_URL;
 
 export const logInUsers = (payload) => dispatch => {
+
+    if (payload && payload['email'] === 'guest') dispatch({ type: LOGIN_GUEST, data: payload });
+
     axios
         .post(`${API_HOST_URL}/api/login`, payload)
         .then((res) => {

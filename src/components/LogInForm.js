@@ -16,11 +16,11 @@ class LogInForm extends Component {
     }
 
     componentWillReceiveProps = (nextProps) => {
-
+        const { login } = nextProps.state;
         this.setState({
-            user: nextProps.state.login ? nextProps.state.login.user : {},
-            errmsg: nextProps.state.login ? nextProps.state.login.errmsg : '',
-            fetched: nextProps.state.login ? nextProps.state.login.feched : false
+            user: login ? login.user : {},
+            errmsg: login ? login.errmsg : '',
+            fetched: login ? login.feched : false
         });
     }
 
@@ -48,7 +48,8 @@ class LogInForm extends Component {
                 password: this.state.password
             }
             sessionStorage.setItem("user", JSON.stringify(user));
-            this.setState({ fetched: true });
+            this.props.logInUsers(payload)
+            if (this.state.fetched) this.setState({ fetched: true });
         } else {
             this.props.logInUsers(payload)
             if (this.state.fetched) this.setState({ fetched: true });

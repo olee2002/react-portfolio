@@ -20,7 +20,7 @@ class SignUpForm extends Component {
         return (e) => {
             this.setState({
                 [name]: e.target.value
-            })
+            });
         }
     }
 

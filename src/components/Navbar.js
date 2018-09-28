@@ -30,10 +30,12 @@ class Navbar extends Component {
     }
 
     handleLogOut = () => {
-        const user = sessionStorage.getItem("user");
         sessionStorage.removeItem("user");
-        this.props.logInUsers()
-        this.setState({ user });
+        this.props.logInUsers();
+    }
+
+    componentWillReceiveProps = (nextProps) => {
+        console.log('nav', nextProps)
     }
 
     render() {
