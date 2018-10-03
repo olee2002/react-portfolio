@@ -157,6 +157,9 @@ button{
     input{
     width: 200px;
     }
+    button{
+        width: 100px; 
+    }
 `;
 
 

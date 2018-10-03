@@ -145,11 +145,13 @@ button{
 @media only screen and (max-width: 600px) {
  width: 100vh;
  height: 100vh;
- 
- form{
+    form{
     margin-right:300px;
     input{
     width: 200px;
+    }
+    button{
+        width: 100px; 
     }
 }
 }
