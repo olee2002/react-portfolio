@@ -151,7 +151,8 @@ button{
     width: 200px;
     }
     button{
-        width: 100px; 
+        width: 95px; 
+        font-size: 10px;
     }
 }
 }
