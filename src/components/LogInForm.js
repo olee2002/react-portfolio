@@ -147,7 +147,7 @@ button{
  height: 100vh;
  
  form{
-    margin-right:350px;
+    margin-right:300px;
     input{
     width: 200px;
     }
