@@ -24,7 +24,7 @@ body {
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   z-index: -999;
 } 
 

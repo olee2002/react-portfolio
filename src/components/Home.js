@@ -30,10 +30,15 @@ height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
-z-index: 999 ;
+z-index: 0 ;
 div{
     margin-top: -100px; 
     font-size: 35px;
     font-weight: 800;
 }
+@media only screen and (max-width: 600px) {
+    position: fixed;
+    div{
+        font-size: 20px;  
+    }
 `;

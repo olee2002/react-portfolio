@@ -35,7 +35,7 @@ const Container = styled.div`
   font-weight: 900;
   background: rgba(232, 231, 231,0.75);
   color:rgb(3, 3, 3);
-  z-index: 999 ;
+  z-index: 1 ;
   div{
                     display: flex;
                     flex-direction: row;

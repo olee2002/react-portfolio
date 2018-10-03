@@ -33,7 +33,7 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  z-index: 999 ; 
+  z-index: 1 ; 
 div{
   width: 60vw;
   height: 60vh;

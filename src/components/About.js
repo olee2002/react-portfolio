@@ -52,4 +52,12 @@ div{
     text-align: left;
     z-index: 999 ;
     }
+    @media (max-width: 700px) {
+           img{
+            width: 50vw;
+        }
+        div{
+    width: 85vw;
+    }
+  }
 `;

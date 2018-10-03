@@ -44,10 +44,10 @@ class Navbar extends Component {
         return (
             <Container>
                 <div><Link style={styles.menu} to='/'><img src='images/home.svg' alt="home" /><p>Home</p></Link></div>
-                <div><Link style={styles.menu} to='/apps'><img src='images/works.png' alt="works" />Apps</Link></div>
-                <div><Link style={styles.menu} to='/youtube'><img src='images/design.png' alt="youtube" />Youtube</Link></div>
-                <div><Link style={styles.menu} to='/about'><img src='images/user.png' alt="about" />About</Link></div>
-                <div><a style={styles.menu} href='https://github.com/olee2002/react-portfolio/blob/master/public/images/olee-resume.pdf' target=''><img src='images/resume.png' alt="resume" />Résumé</a></div>
+                <div><Link style={styles.menu} to='/apps'><img src='images/works.png' alt="works" /><p>Apps</p></Link></div>
+                <div><Link style={styles.menu} to='/youtube'><img src='images/design.png' alt="youtube" /><p>Youtube</p></Link></div>
+                <div><Link style={styles.menu} to='/about'><img src='images/user.png' alt="about" /><p>About</p></Link></div>
+                <div><a style={styles.menu} href='https://github.com/olee2002/react-portfolio/blob/master/public/images/olee-resume.pdf' target=''><img src='images/resume.png' alt="resume" /><p>Résumé</p></a></div>
 
                 {!user ?
                     <span style={styles.button}>
@@ -92,12 +92,13 @@ const Container = styled.div`
           flex-direction: row;
           justify-content: center;
         align-items: center;
+       
         div{
             display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        width:20vh;
+        width:25vh;
         color: black;
         cursor: pointer;
         margin-top: 5px;
@@ -119,6 +120,7 @@ img{
     width: 100px;
     background: none;
     border: none;
+    z-index: 1 ;
     cursor: pointer;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
@@ -127,6 +129,11 @@ img{
         color: 'white';
         };
 }
+@media (max-width: 700px) {
+            p{
+        display:none;
+        }
+  }
 }
                 `;
 

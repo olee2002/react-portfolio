@@ -113,10 +113,9 @@ align-items: center;
 form{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-end;
-    z-index: 999 ;
-    margin-right: 50px;
+    z-index: 1 ;
 }
 label{
     margin-left: 10px;
@@ -128,7 +127,7 @@ input{
     width: 300px;
     margin: 3px;
     border: 1px solid lightgray;
-    z-index: 999;
+    z-index: 1;
     font-size: 14px;
     background: #ffffff;
 }
@@ -146,6 +145,13 @@ button{
 @media only screen and (max-width: 600px) {
  width: 100vh;
  height: 100vh;
+ 
+ form{
+    margin-right:350px;
+    input{
+    width: 200px;
+    }
+}
 }
 
 `;

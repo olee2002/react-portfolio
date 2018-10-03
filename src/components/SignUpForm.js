@@ -116,13 +116,13 @@ height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
-z-index: 999 ;
+z-index: 1 ;
 form{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
-    z-index: 999 ;
+    z-index: 1 ;
     margin-right: 50px;
 }
 label{
@@ -135,7 +135,7 @@ input{
     width: 300px;
     margin: 3px;
     border: 1px solid lightgray;
-    z-index: 999;
+    z-index: 1;
     font-size: 14px;
 }
 button{
@@ -149,6 +149,14 @@ button{
     font-family: 'Montserrat', sans-serif;
     box-shadow:1.5px 1.5px 0px rgba(0,0,0,0.15);
 }
+@media only screen and (max-width: 600px) {
+    position: fixed;
+    div{
+        font-size: 20px;  
+    }
+    input{
+    width: 200px;
+    }
 `;
 
 
