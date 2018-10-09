@@ -20,9 +20,9 @@ class SignUpForm extends Component {
     componentWillReceiveProps = (nextProps) => {
         const { user, errmsg, fetched } = nextProps.state.signup;
         this.setState({
-            user: user,
-            errmsg: errmsg,
-            fetched: fetched
+            user: user ? user : {},
+            errmsg: errmsg ? errmsg : '',
+            fetched: fetched ? fetched : false
         })
     }
 

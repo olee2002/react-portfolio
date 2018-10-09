@@ -107,9 +107,11 @@ export default connect(mapStateToProps, mapDispatchToProps)(LogInForm);
 const Container = styled.div`
 width: 100vw;
 height: 100vh;
+position: fixed;
 display: flex;
 justify-content: center;
 align-items: center;
+z-index: 1 ;
 form{
     display: flex;
     flex-direction: column;
@@ -138,6 +140,7 @@ button{
     margin-top: 10px;
     margin-right: 5px;
     cursor: pointer;
+    z-index: 1 ;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
     box-shadow:1.5px 1.5px 0px rgba(0,0,0,0.15);
