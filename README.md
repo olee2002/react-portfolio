@@ -1,6 +1,11 @@
 # react-portfolio (Frontend) 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+Go to my youtube channel for some of the video tutorials that I recorded while building this project.
+For example, the video below is explaining how environmental variables are stored and set in the local as well as in production.
+
+https://www.youtube.com/watch?v=CGp6QJL5fxM&t=3s
+
 The original website was built with JQuery and I have migrated it to a React version. This web app has a backend in order to keep track of user data and inputs. 
 
 You can find the most recent react version of this app below. 
