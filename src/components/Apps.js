@@ -62,7 +62,7 @@ div{
 img{
     z-index: 0 ;
   margin:3.5px;
-  border: 1px solid darkgray;
+  box-shadow:1.5px 1.5px #888888;
   overflow: hidden;
   height: 175px;
   max-width: 175px;
