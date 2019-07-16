@@ -1,8 +1,10 @@
 import React from 'react';
 import Particles from 'react-particles-js';
+import ReactTooltip from 'react-tooltip';
 
 const Particle = () => {
     return (
+       <div data-tip='click to create bubbles!' data-type='light'>
         <Particles
             className='particles'
             params={{
@@ -122,6 +124,8 @@ const Particle = () => {
                 }
             }
             } />
+            <ReactTooltip className='tooltip' />
+            </div> 
     )
 }
 
