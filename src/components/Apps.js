@@ -18,7 +18,7 @@ export default class Apps extends Component {
                 <div>
                 <a href='https://syndeo.netlify.com/' target="_blank" data-tip={syndeo} data-type='info'><img src='images/syndeo.png' alt="syndeo"></img></a>
                 <a href='https://wastepoint-qa.netlify.com/'  target="_blank" data-tip={wastepoint} data-type='info'><img src='images/wp.png' alt="wastepoint"></img></a>
-                <a href='' data-tip={wastepointMobile} data-type='info'>
+                <a href='#' data-tip={wastepointMobile} data-type='info'>
             
                      <img src='images/wp-1.png' alt="wastepoint"/>
                      <img src='images/wp-2.png' alt="wastepoint"/>
