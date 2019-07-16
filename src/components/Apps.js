@@ -17,8 +17,8 @@ export default class Apps extends Component {
             <Container>
                 <div>
                 <a href='https://syndeo.netlify.com/' target="_blank" data-tip={syndeo} data-type='info'><img src='images/syndeo.png' alt="syndeo"></img></a>
-                <a href='https://wastepoint-qa.netlify.com/'  target ='' data-tip={wastepoint} data-type='info'><img src='images/wp.png' alt="wastepoint"></img></a>
-                <a href='https://wastepoint-qa.netlify.com/'  target ='' data-tip={wastepointMobile} data-type='info'>
+                <a href='https://wastepoint-qa.netlify.com/'  target="_blank" data-tip={wastepoint} data-type='info'><img src='images/wp.png' alt="wastepoint"></img></a>
+                <a href='' data-tip={wastepointMobile} data-type='info'>
             
                      <img src='images/wp-1.png' alt="wastepoint"/>
                      <img src='images/wp-2.png' alt="wastepoint"/>
@@ -28,11 +28,11 @@ export default class Apps extends Component {
                      <img src='images/wp-6.png' alt="wastepoint"/>
           
                    </a>
-                   <a href='https://oleeshangmangame.netlify.com/' data-tip={hangman} data-type='info'><img src='images/hangman.jpg' alt="hangman"></img></a>
-                    <a href='https://infinite-spire-33306.herokuapp.com/' data-tip={upnext} data-type='info'><img src='images/upnext.jpg' alt="upnext"></img></a>
-                    <a href='https://my-architecture.herokuapp.com/' data-tip={myarch} data-type='info'><img src='images/myarch.jpg' alt="myarch"></img></a>
-                    <a href='https://team-project.herokuapp.com/' data-tip={citypoint} data-type='info'><img src='images/citypoint.png' alt="citypoint"></img></a>
-                    <a href='https://o-lingo.herokuapp.com/' data-tip={olingo} data-type='info'><img src='images/olingo.png' alt="olingo"></img></a>
+                   <a href='https://oleeshangmangame.netlify.com/'target="_blank" data-tip={hangman} data-type='info'><img src='images/hangman.jpg' alt="hangman"></img></a>
+                    <a href='https://infinite-spire-33306.herokuapp.com/' target="_blank" data-tip={upnext} data-type='info'><img src='images/upnext.jpg' alt="upnext"></img></a>
+                    <a href='https://my-architecture.herokuapp.com/' target="_blank" data-tip={myarch} data-type='info'><img src='images/myarch.jpg' alt="myarch"></img></a>
+                    <a href='https://team-project.herokuapp.com/' target="_blank" data-tip={citypoint} data-type='info'><img src='images/citypoint.png' alt="citypoint"></img></a>
+                    <a href='https://o-lingo.herokuapp.com/' target="_blank" data-tip={olingo} data-type='info'><img src='images/olingo.png' alt="olingo"></img></a>
  
                     <ReactTooltip className='tooltip' /> 
                 </div>
