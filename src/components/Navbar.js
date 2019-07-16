@@ -62,7 +62,6 @@ class Navbar extends Component {
                     </button>
                     </span>
                 }
-                <ReactTooltip className='tooltip' />
             </Container >)
     }
 }

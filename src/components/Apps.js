@@ -4,6 +4,8 @@ import ReactTooltip from 'react-tooltip';
 
 export default class Apps extends Component {
     render() {
+      const wastepoint = "WastePoint: A tailored door to door trash pick-up service web solutions for the admins, supervisors.  Technologies: React/Redux, Material UI and HTML, CSS, PHP/Laravel";
+      const syndeo = "Syndeo:  web platform that connects publishers to advertisers dedicated to the frontend.  Technologies: React/Redux, Material UI and HTML, CSS";
         const hangman = "Hangman: This is a simple word guessing game the basic idea of which is from the hangman game.  Technologies: JavaScript, DOM, jQuery, and HTML, CSS Click image to continue. Watch out for the sound!";
         const upnext = "UpNext: This is a Full-stack application. This app has a built in timer for the each order that will help you monitor your food prep time so you don't need to wait in line. Technologies: MongoDB, Express, Node.js, and Handle-bar/CSS";
         const myarch = "MyArchitecture: This is a Full MERN stack application.This app allows users to log in their favorite buildings in the cities they visit. Technologies: MongoDB, Express, Node.js, and React Styled-Components ";
@@ -13,12 +15,14 @@ export default class Apps extends Component {
         return (
             <Container>
                 <div>
+                <a href='https://wastepoint-qa.netlify.com/'  target ='' data-tip={wastepoint} data-type='info'><img src='images/wp.png' alt="wastepoint"></img></a>
+                <a href='https://syndeo.netlify.com/' data-tip={syndeo} data-type='info'><img src='images/syndeo.png' alt="syndeo"></img></a>
                     <a href='https://oleeshangmangame.netlify.com/' data-tip={hangman} data-type='info'><img src='images/hangman.jpg' alt="hangman"></img></a>
                     <a href='https://infinite-spire-33306.herokuapp.com/' data-tip={upnext} data-type='info'><img src='images/upnext.jpg' alt="upnext"></img></a>
                     <a href='https://my-architecture.herokuapp.com/' data-tip={myarch} data-type='info'><img src='images/myarch.jpg' alt="myarch"></img></a>
                     <a href='https://team-project.herokuapp.com/' data-tip={citypoint} data-type='info'><img src='images/citypoint.png' alt="citypoint"></img></a>
                     <a href='https://o-lingo.herokuapp.com/' data-tip={olingo} data-type='info'><img src='images/olingo.png' alt="olingo"></img></a>
-                    <ReactTooltip className='tooltip' />
+                    <ReactTooltip className='tooltip' /> 
                 </div>
             </Container>
         )
