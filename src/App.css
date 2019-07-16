@@ -7,6 +7,9 @@
   height: 80px;
 }
 
+button:focus {outline:0;}
+input:focus {outline:0;}
+
 .App-header {
   background-color: #222;
   height: 150px;
