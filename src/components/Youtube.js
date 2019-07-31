@@ -26,6 +26,7 @@ align-items: center;
 z-index: 1 ;
 a{
     text-decoration: none;
+    margin-left: 10px;
     margin-bottom: 30px;
     z-index: 1 ;
 }
@@ -34,22 +35,27 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin-bottom: 20px;
+padding:10px;
 iframe{
   z-index: 0 ;
   margin:10px;
-  border: none;
+  border: 1px solid white;
+  box-shadow: 3px 3px lightgray;
   width: 50vh;
   height: 40vh;
   opacity: 0.7;
   text-decoration: none;
 };
 @media only screen and (max-width: 700px) {
-   h3 a{
-      padding: 20px;
+   h3 {
+      display: none;
    }
-    div{
-        font-size: 30px;  
-        padding: 20px;
+   a{font-size: 18px;}
+   iframe{
+      width: 90%;
+   }
+    div{ 
+        padding: 10px;
         color: #181818;
     }
    }
