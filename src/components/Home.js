@@ -36,9 +36,11 @@ div{
     font-size: 35px;
     font-weight: 800;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     position: fixed;
     div{
-        font-size: 20px;  
+        font-size: 32px;  
+        padding: 20px;
+        color: #181818;
     }
 `;

@@ -58,6 +58,9 @@ div{
   flex-wrap: wrap;
   /* justify-content: center; */
   align-items: center; 
+  @media (max-width: 700px) {
+  justify-content: center;
+  }
 }
 img{
     z-index: 0 ;
@@ -72,5 +75,6 @@ img{
     opacity: 1;
     transform: translateY(2px);
   }
+  
 };
 `;

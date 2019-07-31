@@ -13,13 +13,6 @@ const styles = {
         display: 'flex',
         alignItems: 'center',
         height: '10vh'
-    },
-    button: {
-        textDecoration: 'none',
-        color: 'black',
-        display: 'flex',
-        alignItems: 'center',
-        height: '10vh'
     }
 }
 
@@ -34,13 +27,16 @@ class Navbar extends Component {
         this.props.logInUsers();
     }
 
-    componentWillReceiveProps = (nextProps) => {
-        console.log('nav', nextProps)
+    componentDidUpdate = (prevProps) => {
+       console.log('hi hello')
+        console.log('nav', prevProps)
     }
 
     render() {
         const guest = `Not ready to register yet? Log in as a guest! ID:guest, PW:123`;
         const user = JSON.parse(sessionStorage.getItem("user"));
+        const width = window.screen.width
+        console.log('width', width)
         return (
             <Container>
                 <div><Link style={styles.menu} to='/'><img src='images/home.svg' alt="home" /><p>Home</p></Link></div>
@@ -50,10 +46,12 @@ class Navbar extends Component {
                 <div><a style={styles.menu} href='https://github.com/olee2002/react-portfolio/blob/master/public/images/olee-resume.pdf' target=''><img src='images/resume.png' alt="resume" /><p>Résumé</p></a></div>
 
                 {!user ?
+                   width>700 ? 
                     <span style={styles.button}>
-                        <Link style={styles.button} to='/login'><button>LogIn</button></Link>
-                        <Link style={styles.button} to='/signup' data-tip={guest}><button>Register</button></Link>
+                        <Link to='/login'><button>LogIn</button></Link>
+                        <Link to='/signup' data-tip={guest}><button>Register</button></Link>
                     </span>
+                    :<i className="fas fa-bars"></i>
                     :
                     <span style={styles.button}>
                         {`Hello, ${user.first_name}!`}
@@ -116,8 +114,9 @@ img{
         }
     button{
     height: 30px;
-    width: 100px;
+    /* width: 100px; */
     background: none;
+    margin-right: 20px;
     border: none;
     z-index: 1 ;
     cursor: pointer;
@@ -131,6 +130,9 @@ img{
 @media (max-width: 700px) {
             p{
         display:none;
+        }
+        button{
+         margin-right: 0px;
         }
   }
 }
