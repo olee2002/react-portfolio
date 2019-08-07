@@ -13,7 +13,7 @@ const Footer = () =>
     <Container>
         <div><a style={styles} href='https://github.com/olee2002' title="GitHub"><img src='images/github.png' alt="" /></a></div>
         |
-        <div><a style={styles} href='https://www.linkedin.com/in/ok-hyun-lee-8467877' title="LinkedIn"><img src='images/linked.png' alt="" /></a></div>
+        <div><a style={styles} href='https://www.linkedin.com/in/ok-hyun-o-lee-lee-8467877/' title="LinkedIn"><img src='images/linked.png' alt="" /></a></div>
         |
         <div><a style={styles} href="mailto:babylee2002@gmail.com" target="" title="Email"><img src='images/mail.png' alt="" /></a></div>
     </Container >
