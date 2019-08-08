@@ -23,7 +23,7 @@ export default Footer;
 
 
 const Container = styled.div`
-          width: 100vw;
+  width: 100vw;
   height: 10vh;
   display: flex;
   justify-content: center;
