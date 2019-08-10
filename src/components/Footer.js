@@ -23,19 +23,19 @@ export default Footer;
 
 
 const Container = styled.div`
-  width: 100vw;
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-  left: auto; 
-  font-size: 2vh;
-  font-weight: 900;
-  background: rgba(232, 231, 231,0.75);
-  color:rgb(3, 3, 3);
-  z-index: 1 ;
+   width: 100vw;
+   height: 10vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   bottom: 0;
+   left: auto; 
+   font-size: 2vh;
+   font-weight: 900;
+   background: rgba(232, 231, 231,0.75);
+   color:rgb(3, 3, 3);
+   z-index: 1 ;
   div{
                     display: flex;
                     flex-direction: row;
