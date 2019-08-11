@@ -43,7 +43,7 @@ class Navbar extends Component {
                 <div><Link style={styles.menu} to='/apps'><img src='images/works.png' alt="works" /><p>Apps</p></Link></div>
                 <div><Link style={styles.menu} to='/youtube'><img src='images/design.png' alt="youtube" /><p>Youtube</p></Link></div>
                 <div><Link style={styles.menu} to='/about'><img src='images/user.png' alt="about" /><p>About</p></Link></div>
-                <div><a style={styles.menu} href='https://github.com/olee2002/react-portfolio/blob/master/public/images/olee-resume.pdf' target=''><img src='images/resume.png' alt="resume" /><p>Résumé</p></a></div>
+                {/* <div><a style={styles.menu} href='https://github.com/olee2002/react-portfolio/blob/master/public/images/olee-resume.pdf' target=''><img src='images/resume.png' alt="resume" /><p>Résumé</p></a></div> */}
 
                 {!user ?
                    width>700 ? 
