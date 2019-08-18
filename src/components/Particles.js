@@ -4,7 +4,11 @@ import ReactTooltip from 'react-tooltip';
 
 const Particle = () => {
     return (
-       <div data-tip='click to create bubbles!' data-type='light'>
+       <div 
+       data-tip='click to create bubbles!' 
+       data-type='light'
+       data-class = 'tooltip-transparent'
+       >
         <Particles
             className='particles'
             params={{

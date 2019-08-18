@@ -25,6 +25,11 @@ input:focus {outline:0;}
   font-size: large;
 }
 
+.tooltip-transparent {
+   background: transparent !important;
+   padding: 0 !important;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
