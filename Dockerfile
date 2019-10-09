@@ -15,4 +15,4 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 RUN yarn
 
 #start app
-CMD ["npm","start"]
+CMD ["node","s"]
