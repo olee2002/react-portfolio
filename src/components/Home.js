@@ -1,27 +1,55 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { Random } from 'react-animated-text';
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import { Random } from 'react-animated-text'
 
 export default class Home extends Component {
 
+   state = {
+      showText: false,
+   }
 
-    render() {
-        return (
-            <Container>
-                <div>
-                    <Random
+
+   // componentDidMount(){
+   //    this.showTextDelayed();
+   // }
+   
+   // showTextDelayed = () => {
+   //    setInterval(() => {
+   //       this.setState({showText: !this.state.showText})
+   //    }, 13000)
+   // }
+   render() {
+      const { showText } = this.state;
+      return (
+         <Container>
+            <div>
+               <span>
+                 <Random
+                     text="Welcome to Olee's Portfolio Site!"
+                     effect='verticalFadeOut'
+                     effectDirection='down'
+                     effectDuration={7}
+                     effectDelay={3}
+                     iterations={1}
+                     effectChange={10}
+                  />
+               </span>
+               <span>
+                  <Random
                         text="Welcome to Olee's Portfolio Site!"
-                        effect="verticalFadeOut"
-                        effectDirection="down"
-                        effectDuration={4}
-                        effectDelay={2}
-                        iterations={1}
+                        effect='verticalFadeIn'
+                        effectDirection='up'
+                        effectDuration={7}
+                        effectDelay={13}
+                        iterations={5}
                         effectChange={10}
-                    />
-                </div>
-            </Container>
-        )
-    }
+                     />
+                  
+               </span>
+            </div>
+         </Container>
+      )
+   }
 }
 
 const Container = styled.div`
@@ -32,9 +60,13 @@ justify-content: center;
 align-items: center;
 z-index: 0 ;
 div{
-    margin-top: -100px; 
+    margin-top: -50px; 
     font-size: 35px;
     font-weight: 800;
+    span{
+       position: relative;
+
+    }
 }
 @media only screen and (max-width: 700px) {
     position: fixed;
@@ -43,4 +75,4 @@ div{
         padding: 20px;
         color: #181818;
     }
-`;
+`

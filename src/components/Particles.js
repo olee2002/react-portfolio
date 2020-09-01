@@ -43,7 +43,7 @@ const Particle = () => {
                         "random": false,
                         "anim": {
                             "enable": false,
-                            "speed": 0.75,
+                            "speed": 30,
                             "opacity_min": 0.1,
                             "sync": false
                         }
