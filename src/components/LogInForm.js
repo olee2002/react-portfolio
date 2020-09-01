@@ -64,7 +64,7 @@ class LogInForm extends Component {
             <Container>
                 {!this.state.fetched && !user ?
                     <form>
-                        <p style={{ fontSize: '12px', color: 'red' }}>{this.state.errmsg ? `Error Message : ${this.state.errmsg.response.data}` : null}</p>
+                        <p style={{ fontSize: '12px', color: 'red' }}>{this.state.errmsg ? `Error Message : ${this.state.errmsg.response ? this.state.errmsg.response.data: 'User Not Found!'}` : null}</p>
                         <div>
                             <label>Email</label>
                             <input type='text' onChange={this.handleChange('email')} />
