@@ -35,6 +35,16 @@ const Footer = () => (
             <img src='images/mail.png' alt='' />
          </a>
       </div>
+      |
+      <div>
+         <a
+            style={styles}
+            href='mailto:babylee2002@gmail.com'
+            target=''
+            title='Resume'>
+            <img src='images/resume.png' alt='' />
+         </a>
+      </div>
    </Container>
 )
 
