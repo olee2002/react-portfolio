@@ -1,11 +1,9 @@
 import React from 'react';
 import Particles from 'react-particles-js';
-import ReactTooltip from 'react-tooltip';
 
 const Particle = () => {
     return (
        <div 
-       data-tip='click to create bubbles!' 
        data-type='light'
        data-class = 'tooltip-transparent'
        >
@@ -128,7 +126,6 @@ const Particle = () => {
                 }
             }
             } />
-            <ReactTooltip className='tooltip' />
             </div> 
     )
 }
