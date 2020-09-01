@@ -4,6 +4,7 @@ import ReactTooltip from 'react-tooltip';
 
 export default class Apps extends Component {
     render() {
+      const ecommerce = "A shopping cart app with firebase Auth/ Stripe API"
       const wastepoint = "WastePoint Web Portal: A tailored door to door trash pick-up service web solutions for the admins, supervisors.  Technologies: React/Redux, Material UI and HTML, CSS, PHP/Laravel";
       const wastepointMobile = "WastePoint Mobile:This native app tracks porter locations, scans qrcode and take photos of jobsite and report them back to the admin site.  Technologies: React-Native/Expo, Native Base and PHP/Laravel";
       const syndeo = "Syndeo:  web platform that connects publishers to advertisers dedicated to the frontend.  Technologies: React/Redux, Material UI and HTML, CSS";
@@ -16,23 +17,20 @@ export default class Apps extends Component {
         return (
             <Container>
                 <div>
-                <a href='https://syndeo.netlify.com/' target="_blank" data-tip={syndeo} data-type='info'><img src='images/syndeo.png' alt="syndeo"></img></a>
-                <a href='https://wastepoint-qa.netlify.com/'  target="_blank" data-tip={wastepoint} data-type='info'><img src='images/wp.png' alt="wastepoint"></img></a>
+                <a href='https://olee2002.github.io/e-commerce/' target="_blank" data-tip={ecommerce} data-type='info'><img src='images/e-commerce.png' alt="e-commerce"/></a>
+                <a href='https://syndeo.netlify.com/' target="_blank" data-tip={syndeo} data-type='info'><img src='images/syndeo.png' alt="syndeo"/></a>
+                <a href='https://wastepoint-qa.netlify.com/'  target="_blank" data-tip={wastepoint} data-type='info'><img src='images/wp.png' alt="wastepoint"/></a>
                 <a href='#' data-tip={wastepointMobile} data-type='info'>
             
                      <img src='images/wp-1.png' alt="wastepoint"/>
                      <img src='images/wp-2.png' alt="wastepoint"/>
                      <img src='images/wp-3.png' alt="wastepoint"/>
                      <img src='images/wp-4.png' alt="wastepoint"/>
-                     <img src='images/wp-5.png' alt="wastepoint"/>
                      <img src='images/wp-6.png' alt="wastepoint"/>
           
                    </a>
                    <a href='https://oleeshangmangame.netlify.com/'target="_blank" data-tip={hangman} data-type='info'><img src='images/hangman.jpg' alt="hangman"></img></a>
                     <a href='https://infinite-spire-33306.herokuapp.com/' target="_blank" data-tip={upnext} data-type='info'><img src='images/upnext.jpg' alt="upnext"></img></a>
-                    <a href='https://my-architecture.herokuapp.com/' target="_blank" data-tip={myarch} data-type='info'><img src='images/myarch.jpg' alt="myarch"></img></a>
-                    <a href='https://team-project.herokuapp.com/' target="_blank" data-tip={citypoint} data-type='info'><img src='images/citypoint.png' alt="citypoint"></img></a>
-                    <a href='https://o-lingo.herokuapp.com/' target="_blank" data-tip={olingo} data-type='info'><img src='images/olingo.png' alt="olingo"></img></a>
  
                     <ReactTooltip className='tooltip'/> 
                 </div>
