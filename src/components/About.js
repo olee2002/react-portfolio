@@ -43,7 +43,6 @@ z-index: 999 ;
 img{
     width: 25vw;
     border-radius: 10px;
-    margin-bottom: 30px;
 }
 form{
     z-index: 999 ; 
@@ -54,8 +53,10 @@ div{
     z-index: 999 ;
     }
     @media (max-width: 700px) {
+       font-size: 15px;
            img{
             width: 50vw;
+            margin-top: 30px;
         }
         div{
     width: 85vw;

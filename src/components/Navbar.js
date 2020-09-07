@@ -1,78 +1,103 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import ReactTooltip from 'react-tooltip';
+import React, { useState, useEffect } from 'react'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import { logInUsers } from '../redux/actions/loginActionCreator'
 
 const styles = {
-    menu: {
-        textDecoration: 'none',
-        color: 'black',
-        display: 'flex',
-        alignItems: 'center',
-        height: '10vh'
-    }
+   menu: {
+      textDecoration: 'none',
+      color: 'black',
+      display: 'flex',
+      alignItems: 'center',
+      height: '10vh',
+   },
 }
 
-class Navbar extends Component {
+const Navbar = () => {
+   const [user, setUser] = useState({});
+   const [width, setWidth] = useState(window.innerWidth);
+useEffect(() => {
+   // Handler to call on window resize
+   function handleResize() {
+     // Set window width/height to state
+     setWidth(window.innerWidth);
+   }
+   
+   // Add event listener
+   window.addEventListener("resize", handleResize);
+   
+   // Call handler right away so state gets updated with initial window size
+   handleResize();
+   
+   // Remove event listener on cleanup
+   return () => window.removeEventListener("resize", handleResize);
+ }, []); // Empty array ensures that effect is only run on mount
 
-    state = {
-        user: {}
-    }
+   const handleLogOut = () => {
+      sessionStorage.removeItem('user')
+      this.props.logInUsers()
+   }
 
-    handleLogOut = () => {
-        sessionStorage.removeItem("user");
-        this.props.logInUsers();
-    }
-
-    componentDidUpdate = (prevProps) => {
-       console.log('hi hello')
-        console.log('nav', prevProps)
-    }
-
-    render() {
-        const guest = `Not ready to register yet? Log in as a guest! ID:guest, PW:123`;
-        const user = JSON.parse(sessionStorage.getItem("user"));
-        const width = window.screen.width
-        console.log('width', width)
-        return (
-            <Container>
-                <div><Link style={styles.menu} to='/'><img src='images/home.svg' alt="home" /><p>Home</p></Link></div>
-                <div><Link style={styles.menu} to='/apps'><img src='images/works.png' alt="works" /><p>Apps</p></Link></div>
-                <div><Link style={styles.menu} to='/youtube'><img src='images/design.png' alt="youtube" /><p>Youtube</p></Link></div>
-                <div><Link style={styles.menu} to='/about'><img src='images/user.png' alt="about" /><p>About</p></Link></div>
-            
-
-                {!user ?
-                   width>700 ? 
-                    <span style={styles.button}>
-                        <Link to='/login'><button>LogIn</button></Link>
-                        <Link to='/signup' data-tip={guest}><button>Register</button></Link>
-                    </span>
-                    :<i className="fas fa-bars"></i>
-                    :
-                    <span style={styles.button}>
-                        {`Hello, ${user.first_name}!`}
-                        <button onClick={this.handleLogOut}>
-                            LogOut
-                    </button>
-                    </span>
-                }
-            </Container >)
-    }
+   const guest = `Not ready to register yet? Log in as a guest! ID:guest, PW:123`
+   const userStored = JSON.parse(sessionStorage.getItem('user'))
+   console.log('width', width)
+   return (
+      <Container>
+         <div>
+            <Link style={styles.menu} to='/'>
+               <img src='images/home.svg' alt='home' />
+               <p>Home</p>
+            </Link>
+         </div>
+         <div>
+            <Link style={styles.menu} to='/apps'>
+               <img src='images/works.png' alt='works' />
+               <p>Apps</p>
+            </Link>
+         </div>
+         <div>
+            <Link style={styles.menu} to='/youtube'>
+               <img src='images/design.png' alt='youtube' />
+               <p>Youtube</p>
+            </Link>
+         </div>
+         <div>
+            <Link style={styles.menu} to='/about'>
+               <img src='images/user.png' alt='about' />
+               <p>About</p>
+            </Link>
+         </div>
+         <div>
+            {!userStored ? (
+               width > 700 ? (
+                  <span style={styles.button}>
+                     <Link to='/login'>
+                        <button>LogIn</button>
+                     </Link>
+                     <Link to='/signup' data-tip={guest}>
+                        <button>Register</button>
+                     </Link>
+                  </span>
+               ) : (
+                  <Link to='/login'>
+                     <i style={styles.menu} className='fas fa-bars'></i>
+                  </Link>
+               )
+            ) : (
+               <span style={styles.button}>
+                  {`Hello, ${user.first_name}!`}
+                  <button onClick={this.handleLogOut}>LogOut</button>
+               </span>
+            )}
+         </div>
+      </Container>
+   )
 }
 
-const mapStateToProps = state => ({
-    state
-});
 
-const mapDispatchToProps = dispatch => ({
-    logInUsers: (payload) => dispatch(logInUsers(payload))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+export default Navbar;
 
 const Container = styled.div`
           width: 100vw;
@@ -104,7 +129,7 @@ const Container = styled.div`
         border-bottom: 5px solid darkgray;
         background: rgba(0, 0,0, 0.045)
         };
-img{
+img, i{
         opacity: 1;
         height:3.0vh;
         z-index: 0 ;
@@ -136,6 +161,4 @@ img{
         }
   }
 }
-                `;
-
-
+                `
