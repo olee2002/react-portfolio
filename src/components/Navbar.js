@@ -18,36 +18,36 @@ const styles = {
       color: 'black',
       display: 'flex',
       alignItems: 'center',
-      justifyContent:'center',
+      justifyContent: 'center',
       height: '10vh',
    },
    icon: {
       display: 'flex',
       alignItems: 'center',
-      justifyContent:'center',
+      justifyContent: 'center',
       width: 50,
-   }
+   },
 }
 
 const Navbar = () => {
-   const [user, setUser] = useState({});
-   const [width, setWidth] = useState(window.innerWidth);
-useEffect(() => {
-   // Handler to call on window resize
-   function handleResize() {
-     // Set window width/height to state
-     setWidth(window.innerWidth);
-   }
-   
-   // Add event listener
-   window.addEventListener("resize", handleResize);
-   
-   // Call handler right away so state gets updated with initial window size
-   handleResize();
-   
-   // Remove event listener on cleanup
-   return () => window.removeEventListener("resize", handleResize);
- }, []); // Empty array ensures that effect is only run on mount
+   const [user, setUser] = useState({})
+   const [width, setWidth] = useState(window.innerWidth)
+   useEffect(() => {
+      // Handler to call on window resize
+      function handleResize() {
+         // Set window width/height to state
+         setWidth(window.innerWidth)
+      }
+
+      // Add event listener
+      window.addEventListener('resize', handleResize)
+
+      // Call handler right away so state gets updated with initial window size
+      handleResize()
+
+      // Remove event listener on cleanup
+      return () => window.removeEventListener('resize', handleResize)
+   }, []) // Empty array ensures that effect is only run on mount
 
    const handleLogOut = () => {
       sessionStorage.removeItem('user')
@@ -82,35 +82,38 @@ useEffect(() => {
                <p>About</p>
             </Link>
          </div>
-         <div>
-            {!userStored ? (
-               width > 700 ? (
-                  <span style={styles.button}>
-                     <Link to='/login'>
-                        <button>LogIn</button>
+         {!userStored ? (
+            width > 700 ? (
+                  <div>
+                     <Link style={styles.menu} to='/login'>
+                        LogIn/SignUp
                      </Link>
-                     <Link to='/signup' data-tip={guest}>
-                        <button>Register</button>
-                     </Link>
-                  </span>
-               ) : (
+                  </div>
+                  // <div>
+                  //    <Link to='/signup' data-tip={guest}>
+                  //       <button>Register</button>
+                  //    </Link>
+                  // </div>
+            ) : (
+               <div>
                   <Link style={styles.menuIcon} to='/login'>
                      <i style={styles.icon} className='fas fa-bars'></i>
                   </Link>
-               )
-            ) : (
-               <span style={styles.button}>
+               </div>
+            )
+         ) : (
+            <div>
+               <span style={styles.menu}>
                   {`Hello, ${user.first_name}!`}
                   <button onClick={this.handleLogOut}>LogOut</button>
                </span>
-            )}
-         </div>
+            </div>
+         )}
       </Container>
    )
 }
 
-
-export default Navbar;
+export default Navbar
 
 const Container = styled.div`
           width: 100vw;
@@ -134,6 +137,7 @@ const Container = styled.div`
         justify-content: center;
         align-items: center;
         width:25vh;
+        height: inherit;
         color: black;
         cursor: pointer;
         margin-top: 5px;
