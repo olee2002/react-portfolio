@@ -13,6 +13,20 @@ const styles = {
       alignItems: 'center',
       height: '10vh',
    },
+   menuIcon: {
+      textDecoration: 'none',
+      color: 'black',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent:'center',
+      height: '10vh',
+   },
+   icon: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent:'center',
+      width: 50,
+   }
 }
 
 const Navbar = () => {
@@ -42,7 +56,6 @@ useEffect(() => {
 
    const guest = `Not ready to register yet? Log in as a guest! ID:guest, PW:123`
    const userStored = JSON.parse(sessionStorage.getItem('user'))
-   console.log('width', width)
    return (
       <Container>
          <div>
@@ -81,8 +94,8 @@ useEffect(() => {
                      </Link>
                   </span>
                ) : (
-                  <Link to='/login'>
-                     <i style={styles.menu} className='fas fa-bars'></i>
+                  <Link style={styles.menuIcon} to='/login'>
+                     <i style={styles.icon} className='fas fa-bars'></i>
                   </Link>
                )
             ) : (
@@ -129,7 +142,7 @@ const Container = styled.div`
         border-bottom: 5px solid darkgray;
         background: rgba(0, 0,0, 0.045)
         };
-img, i{
+img{
         opacity: 1;
         height:3.0vh;
         z-index: 0 ;
