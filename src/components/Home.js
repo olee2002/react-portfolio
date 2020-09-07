@@ -8,16 +8,6 @@ export default class Home extends Component {
       showText: false,
    }
 
-
-   // componentDidMount(){
-   //    this.showTextDelayed();
-   // }
-   
-   // showTextDelayed = () => {
-   //    setInterval(() => {
-   //       this.setState({showText: !this.state.showText})
-   //    }, 13000)
-   // }
    render() {
       const { showText } = this.state;
       return (
