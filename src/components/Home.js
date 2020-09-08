@@ -20,21 +20,9 @@ export default class Home extends Component {
                      effectDirection='down'
                      effectDuration={7}
                      effectDelay={3}
-                     iterations={1}
+                     iterations={5}
                      effectChange={10}
                   />
-               </span>
-               <span>
-                  <Random
-                        text="Welcome to Olee's Portfolio Site!"
-                        effect='verticalFadeIn'
-                        effectDirection='up'
-                        effectDuration={7}
-                        effectDelay={13}
-                        iterations={5}
-                        effectChange={10}
-                     />
-                  
                </span>
             </div>
          </Container>
