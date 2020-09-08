@@ -1,14 +1,9 @@
 import React from 'react';
 import Particles from 'react-particles-js';
-import ReactTooltip from 'react-tooltip';
-console.log('window.location.pathname',window.location)
+
 const Particle = () => {
     return (
-       <div 
-       data-tip={window.location.pathname!=='/apps' ? 'click to create bubbles!' : null}
-       data-type='light'
-       data-class = 'tooltip-transparent'
-       >
+       <div>
         <Particles
             className='particles'
             params={{
@@ -128,7 +123,6 @@ const Particle = () => {
                 }
             }
             } />
-            <ReactTooltip className='tooltip' />
             </div> 
     )
 }
