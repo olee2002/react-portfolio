@@ -59,9 +59,6 @@ class SignUpForm extends Component {
             {!this.state.isRegistered && !user ? (
                <form>
                   <h3>Please Sign Up!</h3>
-                  <div style={{ fontSize: '12px', color: 'red' }}>
-                     {errmsg ? errmsg : null}
-                  </div>
                   <div>
                      <label>Firstname</label>
                      <input
@@ -92,7 +89,7 @@ class SignUpForm extends Component {
                         style={{
                            position: 'absolute',
                            marginLeft: -30,
-                           marginTop: 8,
+                           marginTop: 15,
                            cursor: 'pointer',
                         }}>
                         {' '}
@@ -108,6 +105,9 @@ class SignUpForm extends Component {
                         <button>LogIn</button>
                      </Link>
                      <button onClick={this.handleSubmit}>Register</button>
+                     <div style={{ fontSize: '12px', color: 'red' }}>
+                     {errmsg ? errmsg : null}
+                  </div>
                   </div>
                </form>
             ) : (
@@ -153,25 +153,28 @@ label{
     margin-right: 10px;
     font-size: 14px;
 };
-input{
-    height: 25px;
-    width: 300px;
-    margin: 3px;
-    border: 1px solid lightgray;
-    z-index: 1;
-    font-size: 14px;
-}
-button{
-    height: 30px;
-    width: 150px;
-    border: none;
-    margin-top: 10px;
-    margin-right: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    box-shadow:1.5px 1.5px 0px rgba(0,0,0,0.15);
-}
+input {
+      height: 25px;
+      width: 300px;
+      margin: 5px;
+      padding: 5px;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      z-index: 1;
+      font-size: 14px;
+      background: #ffffff;
+   }
+   button {
+      height: 30px;
+      width: 150px;
+      border: none;
+      margin: 6px;
+      cursor: pointer;
+      z-index: 1;
+      font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
+      box-shadow: 1.5px 1.5px 0px rgba(0, 0, 0, 0.15);
+   }
 @media only screen and (max-width: 600px) {
     position: fixed;
     div{

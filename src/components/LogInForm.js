@@ -33,7 +33,6 @@ class LogInForm extends Component {
       e.preventDefault()
       this.setState({
          passwordShown: !this.state.passwordShown,
-         errmsg: '',
       })
    }
 
@@ -63,6 +62,7 @@ class LogInForm extends Component {
          <Container>
             {!this.state.fetched && !user ? (
                <form>
+                   <h3>Please Log In!</h3>
                   <div>
                      <label>Email</label>
                      <input type='text' onChange={this.handleChange('email')} />
@@ -73,11 +73,20 @@ class LogInForm extends Component {
                         type={!this.state.passwordShown ? 'password' : 'text'}
                         onChange={this.handleChange('password')}
                      />
-                     <small onClick={this.handlePassword} style={{ position:'absolute', marginLeft: -30, marginTop:8, cursor:'pointer' }}>
+                     <small
+                        onClick={this.handlePassword}
+                        style={{
+                           position: 'absolute',
+                           marginLeft: -30,
+                           marginTop: 15,
+                           cursor: 'pointer',
+                        }}>
                         {' '}
-                        {!this.state.passwordShown
-                           ? <i class="fa fa-eye" aria-hidden="true"></i>
-                           : <i class="fa fa-eye-slash" aria-hidden="true"></i>}
+                        {!this.state.passwordShown ? (
+                           <i class='fa fa-eye' aria-hidden='true'></i>
+                        ) : (
+                           <i class='fa fa-eye-slash' aria-hidden='true'></i>
+                        )}
                      </small>
                   </div>
                   <div>
@@ -144,8 +153,10 @@ const Container = styled.div`
    input {
       height: 25px;
       width: 300px;
-      margin: 3px;
+      margin: 5px;
+      padding: 5px;
       border: 1px solid lightgray;
+      border-radius: 5px;
       z-index: 1;
       font-size: 14px;
       background: #ffffff;
@@ -154,8 +165,7 @@ const Container = styled.div`
       height: 30px;
       width: 150px;
       border: none;
-      margin-top: 10px;
-      margin-right: 5px;
+      margin: 6px;
       cursor: pointer;
       z-index: 1;
       font-size: 14px;
