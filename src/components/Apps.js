@@ -26,6 +26,7 @@ export default class Apps extends Component {
                      <img src='images/wp-2.png' alt="wastepoint"/>
                      <img src='images/wp-3.png' alt="wastepoint"/>
                      <img src='images/wp-4.png' alt="wastepoint"/>
+                     <img src='images/wp-5.png' alt="wastepoint"/>
                      <img src='images/wp-6.png' alt="wastepoint"/>
           
                    </a>
