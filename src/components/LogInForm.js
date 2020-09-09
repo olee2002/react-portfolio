@@ -138,13 +138,15 @@ const Container = styled.div`
    justify-content: center;
    align-items: center;
    z-index: 1;
-   form {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-end;
-      z-index: 1;
-   }
+   form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    z-index: 1 ;
+    width: 500px;
+    height: 300px;
+}
    label {
       margin-left: 10px;
       margin-right: 10px;

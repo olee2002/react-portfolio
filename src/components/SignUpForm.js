@@ -106,8 +106,8 @@ class SignUpForm extends Component {
                      </Link>
                      <button onClick={this.handleSubmit}>Register</button>
                      <div style={{ fontSize: '12px', color: 'red' }}>
-                     {errmsg ? errmsg : null}
-                  </div>
+                        {errmsg ? errmsg : null}
+                     </div>
                   </div>
                </form>
             ) : (
@@ -134,19 +134,20 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm)
 
 const Container = styled.div`
-width: 100vw;
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-z-index: 1 ;
+ width: 100vw;
+   height: 100vh;
+   position: fixed;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 1;
 form{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-end;
     z-index: 1 ;
-    margin-right: 50px;
+    width: 500px;
+    height: 300px;
 }
 label{
     margin-left: 10px;
@@ -177,6 +178,9 @@ input {
    }
 @media only screen and (max-width: 600px) {
     position: fixed;
+    form{
+      margin-right: 20px;
+    }
     div{
         font-size: 20px;  
     }
