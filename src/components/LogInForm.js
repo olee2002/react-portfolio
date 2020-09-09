@@ -90,7 +90,7 @@ class LogInForm extends Component {
                      </small>
                   </div>
                   <div>
-                     <button onClick={this.handleSubmit}>LogIn</button>
+                     <button onClick={this.handleSubmit}>Log In</button>
                      <Link to='/signup'>
                         <button>Sign Up</button>
                      </Link>

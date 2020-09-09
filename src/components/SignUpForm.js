@@ -102,7 +102,7 @@ class SignUpForm extends Component {
                   </div>
                   <div>
                      <Link to='login'>
-                        <button>LogIn</button>
+                        <button>Log In</button>
                      </Link>
                      <button onClick={this.handleSubmit}>Register</button>
                      <div style={{ fontSize: '12px', color: 'red' }}>
