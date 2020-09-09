@@ -50,14 +50,17 @@ class LogInForm extends Component {
          sessionStorage.setItem('user', JSON.stringify(user))
          this.props.logInUsers(payload)
          if (this.state.fetched) this.setState({ fetched: true })
-      } else {
+      } else if(this.state.email && this.state.password) {
          this.props.logInUsers(payload)
          if (this.state.fetched) this.setState({ fetched: true })
+      } else {
+         this.setState({errmsg: 'All Fields Required!'})
       }
    }
 
    render() {
       const user = JSON.parse(sessionStorage.getItem('user'))
+      const { email, password } = this.state;
       return (
          <Container>
             {!this.state.fetched && !user ? (
@@ -98,8 +101,8 @@ class LogInForm extends Component {
                   <p style={{ fontSize: '12px', color: 'red' }}>
                      {this.state.errmsg
                         ? `Error Message : ${
-                             this.state.errmsg.response
-                                ? this.state.errmsg.response.data
+                             this.state.errmsg
+                                ? 'Invalid Email or Password'
                                 : 'User Not Found!'
                           }`
                         : null}
