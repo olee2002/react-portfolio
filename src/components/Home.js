@@ -20,7 +20,7 @@ export default class Home extends Component {
                      effectDirection='down'
                      effectDuration={7}
                      effectDelay={3}
-                     iterations={5}
+                     iterations={50}
                      effectChange={10}
                   />
                </span>
