@@ -107,7 +107,7 @@ class SignUpForm extends Component {
                      <Link to='login'>
                         <button>LogIn</button>
                      </Link>
-                     <button onClick={this.handleSubmit}>Submit</button>
+                     <button onClick={this.handleSubmit}>Register</button>
                   </div>
                </form>
             ) : (
