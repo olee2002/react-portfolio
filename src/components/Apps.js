@@ -4,7 +4,7 @@ import ReactTooltip from 'react-tooltip';
 
 export default class Apps extends Component {
     render() {
-      const ecommerce = "A shopping cart app with firebase Auth/ Stripe API"
+      const ecommerce = "A shopping cart app with built with React Hooks/Redux firebase Auth/ Stripe API"
       const wastepoint = "WastePoint Web Portal: A tailored door to door trash pick-up service web solutions for the admins, supervisors.  Technologies: React/Redux, Material UI and HTML, CSS, PHP/Laravel";
       const wastepointMobile = "WastePoint Mobile:This native app tracks porter locations, scans qrcode and take photos of jobsite and report them back to the admin site.  Technologies: React-Native/Expo, Native Base and PHP/Laravel";
       const syndeo = "Syndeo:  web platform that connects publishers to advertisers dedicated to the frontend.  Technologies: React/Redux, Material UI and HTML, CSS";
