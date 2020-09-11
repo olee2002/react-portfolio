@@ -42,7 +42,7 @@ class SignUpForm extends Component {
       if (firstName && lastName && email && password) {
          this.props.registerUsers(payload)
       } else {
-         this.setState({ errmsg: 'All Fields Required!' })
+         this.setState({ errmsg: 'Error Message: All Fields Required!' })
       }
    }
    handlePassword = (e) => {
@@ -105,9 +105,9 @@ class SignUpForm extends Component {
                         <button>Log In</button>
                      </Link>
                      <button onClick={this.handleSubmit}>Register</button>
-                     <div style={{ fontSize: '12px', color: 'red' }}>
+                     <p style={{ fontSize: '12px', color: 'red' }}>
                         {errmsg ? errmsg : null}
-                     </div>
+                     </p>
                   </div>
                </form>
             ) : (
