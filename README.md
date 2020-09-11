@@ -1,5 +1,6 @@
 # react-portfolio (Frontend) 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+The app is deployed at https://olees-portfolio.netlify.com.
 
 Go to my youtube channel for some of the video tutorials that I recorded while building this project.
 For example, the video below is explaining how environmental variables are stored and set in the local as well as in production.
