@@ -102,7 +102,7 @@ class SignUpForm extends Component {
                   </div>
                   <div>
                      <Link to='login'>
-                        <button>Log In</button>
+                        <button>Log In Page</button>
                      </Link>
                      <button onClick={this.handleSubmit}>Register</button>
                      <p style={{ fontSize: '12px', color: 'red' }}>
@@ -163,6 +163,7 @@ input {
       border-radius: 5px;
       z-index: 1;
       font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
       background: #ffffff;
    }
    button {
@@ -189,7 +190,7 @@ input {
     }
     button{
         width: 97.5px; 
-        font-size: 10px;
+        font-size: 12px;
     }
 `
 

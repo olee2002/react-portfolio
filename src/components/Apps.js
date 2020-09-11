@@ -47,18 +47,21 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
   z-index: 1 ; 
 div{
-  width: 78vw;
-  height: 60vh;
+  width: 68vw;
+  height: auto;
   display: flex;
+  padding: 20px;
   flex-direction: row;
+  overflow: scroll;
   flex-wrap: wrap;
-  /* justify-content: center; */
-  align-items: center; 
+  align-items: flex-start; 
+  margin-top: 50px;
   @media (max-width: 700px) {
+   width: 85vw;
   justify-content: center;
+  margin-bottom: 50px;
   }
 }
 img{

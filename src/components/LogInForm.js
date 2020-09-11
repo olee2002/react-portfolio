@@ -95,7 +95,7 @@ class LogInForm extends Component {
                   <div>
                      <button onClick={this.handleSubmit}>Log In</button>
                      <Link to='/signup'>
-                        <button>Sign Up</button>
+                        <button>Sign Up Page</button>
                      </Link>
                   </div>
                   <p style={{ fontSize: '12px', color: 'red' }}>
@@ -164,6 +164,7 @@ const Container = styled.div`
       border-radius: 5px;
       z-index: 1;
       font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
       background: #ffffff;
    }
    button {
@@ -187,7 +188,7 @@ const Container = styled.div`
          }
          button {
             width: 97.5px;
-            font-size: 10px;
+            font-size: 12px;
          }
       }
    }
