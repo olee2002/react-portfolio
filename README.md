@@ -7,11 +7,7 @@ For example, the video below is explaining how environmental variables are store
 
 https://www.youtube.com/watch?v=CGp6QJL5fxM&t=3s
 
-The original website was built with JQuery and I have migrated it to a React version. This web app has a backend in order to keep track of user data and inputs. 
-
-You can find the most recent react version of this app below. 
-React|Node|Express|Postgresql - [here](https://olee-portfolio.herokuapp.com).
-JQuery -[here](https://olees.netlify.com/).
+The original website was built with JQuery and migrated to a React version. This web app has a backend in order to keep track of user data and inputs.
 
 
 If you want to copy down the repo :
