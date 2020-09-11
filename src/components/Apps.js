@@ -49,7 +49,7 @@ const Container = styled.div`
   justify-content: center;
   z-index: 1 ; 
 div{
-  width: 68vw;
+  width: 80%;
   height: auto;
   display: flex;
   padding: 20px;
@@ -57,7 +57,8 @@ div{
   overflow: scroll;
   flex-wrap: wrap;
   align-items: flex-start; 
-  margin-top: 50px;
+  margin-top: 60px;
+  margin-bottom: 60px;
   @media (max-width: 700px) {
    width: 85vw;
   justify-content: center;
