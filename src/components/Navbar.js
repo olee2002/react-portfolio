@@ -89,11 +89,6 @@ const Navbar = () => {
                         LogIn/SignUp
                      </Link>
                   </div>
-                  // <div>
-                  //    <Link to='/signup' data-tip={guest}>
-                  //       <button>Register</button>
-                  //    </Link>
-                  // </div>
             ) : (
                <div>
                   <Link style={styles.menuIcon} to='/login'>
@@ -177,5 +172,5 @@ img{
          margin-right: 0px;
         }
   }
-}
-                `
+}`
+

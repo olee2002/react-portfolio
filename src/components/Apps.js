@@ -10,9 +10,6 @@ export default class Apps extends Component {
       const syndeo = "Syndeo:  web platform that connects publishers to advertisers dedicated to the frontend.  Technologies: React/Redux, Material UI and HTML, CSS";
       const hangman = "Hangman: This is a simple word guessing game the basic idea of which is from the hangman game.  Technologies: JavaScript, DOM, jQuery, and HTML, CSS Click image to continue. Watch out for the sound!";
       const upnext = "UpNext: This app has a built in timer for the each order that will help you monitor your food prep time so you don't need to wait in line. Technologies: MongoDB, Express, Node.js, and Handle-bar/CSS";
-      const myarch = "MyArchitecture: This app allows users to log in their favorite buildings in the cities they visit, a Full MERN stack application. Technologies: MongoDB, Express, Node.js, and React Styled-Components ";
-      const citypoint = "CityPoint: A Full-stack application with React on Rails with many to many relationships. This app allows user to write reviews for the cities they visited. Technologies: Ruby on Rails, React,Styled-Components ";
-      const olingo = "Olingo: A Full-stack React on Rails. This app allows users to choose the languages they want to learn. Technologies: Ruby on Rails, React, Styled-Components";
 
         return (
             <Container>
@@ -50,20 +47,19 @@ const Container = styled.div`
   z-index: 1 ; 
 div{
   width: 75vw;
-  height: auto;
+  /* height: auto; */
   display: flex;
-  padding: 20px;
+  /* padding: 40px; */
   flex-direction: row;
   overflow: scroll;
   flex-wrap: wrap;
-  align-items: center; 
-  justify-content: flex-start;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  /* align-items: center; 
+  justify-content: flex-start; */
+  margin-top: 11vh;
+  margin-bottom: 10.25vh;
   @media (max-width: 700px) {
    width: 85vw;
   justify-content: center;
-  margin-bottom: 50px;
   }
 }
 img{
