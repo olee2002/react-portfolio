@@ -51,6 +51,8 @@ div{
     width: 55vw;
     text-align: left;
     z-index: 999 ;
+    margin-top: 11vh;
+    margin-bottom: 10.25vh;
     }
     @media (max-width: 700px) {
        font-size: 15px;
