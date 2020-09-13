@@ -50,22 +50,22 @@ class LogInForm extends Component {
          sessionStorage.setItem('user', JSON.stringify(user))
          this.props.logInUsers(payload)
          if (this.state.fetched) this.setState({ fetched: true })
-      } else if(this.state.email && this.state.password) {
+      } else if (this.state.email && this.state.password) {
          this.props.logInUsers(payload)
          if (this.state.fetched) this.setState({ fetched: true })
       } else {
-         this.setState({errmsg: 'All Fields Required!'})
+         this.setState({ errmsg: 'All Fields Required!' })
       }
    }
 
    render() {
       const user = JSON.parse(sessionStorage.getItem('user'))
-      const { email, password } = this.state;
+      const { email, password } = this.state
       return (
          <Container>
             {!this.state.fetched && !user ? (
                <form>
-                   <h3>Please Log In!</h3>
+                  <h3>Please Log In!</h3>
                   <div>
                      <label>Email</label>
                      <input type='text' onChange={this.handleChange('email')} />
@@ -93,10 +93,10 @@ class LogInForm extends Component {
                      </small>
                   </div>
                   <div>
-                     <button onClick={this.handleSubmit}>Log In</button>
                      <Link to='/signup'>
                         <button>Sign Up Page</button>
                      </Link>
+                     <button onClick={this.handleSubmit}>Log In</button>
                   </div>
                   <p style={{ fontSize: '12px', color: 'red' }}>
                      {this.state.errmsg
@@ -141,15 +141,15 @@ const Container = styled.div`
    justify-content: center;
    align-items: center;
    z-index: 1;
-   form{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    z-index: 1 ;
-    width: 500px;
-    height: 300px;
-}
+   form {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+      z-index: 1;
+      width: 500px;
+      height: 300px;
+   }
    label {
       margin-left: 10px;
       margin-right: 10px;
@@ -182,7 +182,6 @@ const Container = styled.div`
       width: 100vh;
       height: 100vh;
       form {
-         margin-right: 300px;
          input {
             width: 200px;
          }
