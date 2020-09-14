@@ -83,7 +83,7 @@ const Container = styled.div`
       flex-direction: row;
       overflow: scroll;
       flex-wrap: wrap;
-      margin-top: 20vh;
+      margin-top: 15vh;
       margin-bottom: 10.25vh;
       @media (max-width: 700px) {
          margin-top: 10vh;
