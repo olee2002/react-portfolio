@@ -41,14 +41,6 @@ export default class Apps extends Component {
                   data-type='info'>
                   <img src='images/wp.png' alt='wastepoint' />
                </a>
-               <a href='#' data-tip={wastepointMobile} data-type='info'>
-                  <img src='images/wp-1.png' alt='wastepoint' />
-                  <img src='images/wp-2.png' alt='wastepoint' />
-                  <img src='images/wp-3.png' alt='wastepoint' />
-                  <img src='images/wp-4.png' alt='wastepoint' />
-                  <img src='images/wp-5.png' alt='wastepoint' />
-                  <img src='images/wp-6.png' alt='wastepoint' />
-               </a>
                <a
                   href='https://oleeshangmangame.netlify.com/'
                   target='_blank'
@@ -63,7 +55,14 @@ export default class Apps extends Component {
                   data-type='info'>
                   <img src='images/upnext.jpg' alt='upnext'></img>
                </a>
-
+               <a href='#' data-tip={wastepointMobile} data-type='info'>
+                  <img src='images/wp-1.png' alt='wastepoint' />
+                  <img src='images/wp-2.png' alt='wastepoint' />
+                  <img src='images/wp-3.png' alt='wastepoint' />
+                  <img src='images/wp-4.png' alt='wastepoint' />
+                  <img src='images/wp-5.png' alt='wastepoint' />
+                  <img src='images/wp-6.png' alt='wastepoint' />
+               </a>
                <ReactTooltip className='tooltip' />
             </div>
          </Container>
@@ -80,17 +79,14 @@ const Container = styled.div`
    z-index: 1;
    div {
       width: 75vw;
-      /* height: auto; */
       display: flex;
-      /* padding: 40px; */
       flex-direction: row;
       overflow: scroll;
       flex-wrap: wrap;
-      /* align-items: center; 
-  justify-content: flex-start; */
-      margin-top: 11vh;
+      margin-top: 20vh;
       margin-bottom: 10.25vh;
       @media (max-width: 700px) {
+         margin-top: 10vh;
          width: 85vw;
          justify-content: center;
       }
