@@ -40,25 +40,24 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 z-index: 999 ;
+margin-top: 10vh;
 img{
-    width: 25vw;
+    width: 35vw;
     border-radius: 10px;
 }
 form{
     z-index: 999 ; 
 }
 div{
-    width: 55vw;
+    width: 65vw;
     text-align: left;
     z-index: 999 ;
-    margin-top: 11vh;
-    margin-bottom: 10.25vh;
+    margin-bottom: 11vh;
     }
     @media (max-width: 700px) {
        font-size: 15px;
            img{
             width: 50vw;
-            margin-top: 30px;
         }
         div{
     width: 85vw;
