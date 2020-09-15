@@ -87,7 +87,7 @@ const Container = styled.div`
       margin-bottom: 10.25vh;
       @media (max-width: 700px) {
          margin-top: 10vh;
-         width: 85vw;
+         width: 90vw;
          justify-content: center;
       }
    }
@@ -96,8 +96,8 @@ const Container = styled.div`
       margin: 3.5px;
       box-shadow: 1.5px 1.5px #888888;
       overflow: hidden;
-      height: 175px;
-      max-width: 175px;
+      height: 200px;
+      max-width: 200px;
       opacity: 0.7;
       text-decoration: none;
       &:hover {
