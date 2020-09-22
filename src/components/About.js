@@ -42,7 +42,7 @@ align-items: center;
 z-index: 999 ;
 margin-top: 10vh;
 img{
-    width: 35vw;
+    width: 30vw;
     border-radius: 10px;
 }
 form{

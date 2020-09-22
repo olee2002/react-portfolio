@@ -17,7 +17,7 @@ const Footer = () => (
             href='https://github.com/olee2002'
             target='_blank'
             title='GitHub'>
-            <img src='images/github.png' alt='' />
+            <img src='images/github.png' alt='Github' />
          </a>
       </div>
       |
@@ -27,7 +27,7 @@ const Footer = () => (
             href='https://www.linkedin.com/in/ok-hyun-o-lee-l-8467877/'
             target='_blank'
             title='LinkedIn'>
-            <img src='images/linked.png' alt='' />
+            <img src='images/linked.png' alt='LinkedIn' />
          </a>
       </div>
       |
@@ -37,7 +37,7 @@ const Footer = () => (
             href='mailto:babylee2002@gmail.com'
             target='_blank'
             title='Email'>
-            <img src='images/mail.png' alt='' />
+            <img src='images/mail.png' alt='Email' />
          </a>
       </div>
       |
@@ -47,7 +47,7 @@ const Footer = () => (
             href='https://github.com/olee2002/react-portfolio/blob/master/public/images/olee-resume.pdf'
             target='_blank'
             title='Resume'>
-            <img src='images/resume.png' alt='' />
+            <img src='images/resume.png' alt='Resume' />
          </a>
       </div>
    </Container>

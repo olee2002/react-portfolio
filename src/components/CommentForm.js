@@ -62,6 +62,5 @@ textarea{
     border-radius: 5px;
     font-size: 14px;
     border: 1px solid lightgray;
-}
-}
+}}
 `;
