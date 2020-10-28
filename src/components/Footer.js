@@ -40,16 +40,16 @@ const Footer = () => (
             <img src='images/mail.png' alt='Email' />
          </a>
       </div>
-      |
-      <div>
-         <a
-            style={styles}
-            href='https://github.com/olee2002/react-portfolio/blob/master/public/images/olee-resume.pdf'
-            target='_blank'
-            title='Resume'>
-            <img src='images/resume.png' alt='Resume' />
-         </a>
-      </div>
+//       |
+//       <div>
+//          <a
+//             style={styles}
+//             href='https://github.com/olee2002/react-portfolio/blob/master/public/images/olee-resume.pdf'
+//             target='_blank'
+//             title='Resume'>
+//             <img src='images/resume.png' alt='Resume' />
+//          </a>
+//       </div>
    </Container>
 )
 
