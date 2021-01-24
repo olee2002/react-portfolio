@@ -8,7 +8,7 @@ export default class Youtube extends Component {
             <Container>
                 <div><h3>Checkout my coding video on youtube.</h3></div><br />
                 <div>
-                    <iframe src="https://www.youtube.com/embed/rqAlF2K0eVU" title='1' frameborder="10" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/osPrWpxb01U" title='1' frameborder="10" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
                 <div><a href='https://www.youtube.com/channel/UC8E39wGNPoEV6W-bj7lLpDA/featured?view_as=public'>Click here (Olee's Youtube Channel) for more videos!</a></div>
             </Container>
